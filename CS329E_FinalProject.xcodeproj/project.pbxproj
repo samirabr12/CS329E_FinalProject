@@ -17,6 +17,8 @@
 		678E578E2909C55B0088A917 /* CS329E_FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E578D2909C55B0088A917 /* CS329E_FinalProjectTests.swift */; };
 		678E57982909C55B0088A917 /* CS329E_FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57972909C55B0088A917 /* CS329E_FinalProjectUITests.swift */; };
 		678E579A2909C55B0088A917 /* CS329E_FinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57992909C55B0088A917 /* CS329E_FinalProjectUITestsLaunchTests.swift */; };
+		BCA21A01290A628A006B7379 /* PreSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA21A00290A628A006B7379 /* PreSplitViewController.swift */; };
+		BCA21A03290A629D006B7379 /* PostSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA21A02290A629D006B7379 /* PostSplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		678E57932909C55B0088A917 /* CS329E_FinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CS329E_FinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		678E57972909C55B0088A917 /* CS329E_FinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS329E_FinalProjectUITests.swift; sourceTree = "<group>"; };
 		678E57992909C55B0088A917 /* CS329E_FinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS329E_FinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BCA21A00290A628A006B7379 /* PreSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSplitViewController.swift; sourceTree = "<group>"; };
+		BCA21A02290A629D006B7379 /* PostSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				678E57752909C5580088A917 /* SceneDelegate.swift */,
 				678E57772909C5580088A917 /* ViewController.swift */,
 				678E57792909C5580088A917 /* Main.storyboard */,
+				BCA21A00290A628A006B7379 /* PreSplitViewController.swift */,
+				BCA21A02290A629D006B7379 /* PostSplitViewController.swift */,
 				678E577F2909C55A0088A917 /* Assets.xcassets */,
 				678E57812909C55A0088A917 /* LaunchScreen.storyboard */,
 				678E57842909C55A0088A917 /* Info.plist */,
@@ -264,7 +270,9 @@
 				678E57782909C5580088A917 /* ViewController.swift in Sources */,
 				678E57742909C5580088A917 /* AppDelegate.swift in Sources */,
 				678E577E2909C5580088A917 /* CS329E_FinalProject.xcdatamodeld in Sources */,
+				BCA21A01290A628A006B7379 /* PreSplitViewController.swift in Sources */,
 				678E57762909C5580088A917 /* SceneDelegate.swift in Sources */,
+				BCA21A03290A629D006B7379 /* PostSplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
