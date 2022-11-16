@@ -52,7 +52,7 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
     //double checks that all prices have been entered
     @IBAction func calculateButton(_ sender: Any) {
         for price in priceStorage {
-             var row = IndexPath.row
+             //var row = IndexPath.row
             
         }
         

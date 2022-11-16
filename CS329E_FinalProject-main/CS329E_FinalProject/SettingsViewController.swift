@@ -1,13 +1,13 @@
 //
-//  PreSplitViewController.swift
+//  SettingsViewController.swift
 //  CS329E_FinalProject
 //
-//  Created by Natalia Gutman on 10/27/22.
+//  Created by Jennifer Lin on 11/15/22.
 //
 
 import UIKit
 
-class PreSplitViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
