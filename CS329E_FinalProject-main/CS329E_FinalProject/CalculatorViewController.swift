@@ -16,8 +16,9 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var total: UILabel!
     @IBOutlet weak var calcTable: UITableView!
     
-    @IBOutlet weak var itemField: UITextField!
-    @IBOutlet weak var priceField: UITextField!
+    //These were causing errors so I commented them out - Jennifer
+    //@IBOutlet weak var itemField: UITextField!
+    //@IBOutlet weak var priceField: UITextField!
     
     var nameStorage: [String?] = []
     var priceStorage: [Decimal?] = []
@@ -30,8 +31,8 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         calcTable.delegate = self
         calcTable.dataSource = self
-        itemField.delegate = self
-        priceField.delegate = self
+        //itemField.delegate = self
+        //priceField.delegate = self
         total.text = "0.00" // see if this works: /String(0.00)
         
         nameStorage.append(nil)
@@ -80,7 +81,7 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
         let row = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CalculatorCellTableViewCell
         //cell.label.text = nameStorage[row]
-        cell.nameField.text = nameStorage[row]
+        //cell.nameField.text = nameStorage[row]
         if priceStorage[row] != nil {
             cell.priceField.text = "\(priceStorage[row])" // look this up!!
         }

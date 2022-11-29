@@ -23,6 +23,7 @@
 		678E578E2909C55B0088A917 /* CS329E_FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E578D2909C55B0088A917 /* CS329E_FinalProjectTests.swift */; };
 		678E57982909C55B0088A917 /* CS329E_FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57972909C55B0088A917 /* CS329E_FinalProjectUITests.swift */; };
 		678E579A2909C55B0088A917 /* CS329E_FinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57992909C55B0088A917 /* CS329E_FinalProjectUITestsLaunchTests.swift */; };
+		7680C4522935C70F0037366C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7680C4512935C70F0037366C /* CalendarViewController.swift */; };
 		76AA6D542924704500DFD82F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA6D532924704500DFD82F /* ProfileViewController.swift */; };
 		76AA6D562924717600DFD82F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA6D552924717600DFD82F /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		678E57932909C55B0088A917 /* CS329E_FinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CS329E_FinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		678E57972909C55B0088A917 /* CS329E_FinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS329E_FinalProjectUITests.swift; sourceTree = "<group>"; };
 		678E57992909C55B0088A917 /* CS329E_FinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS329E_FinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7680C4512935C70F0037366C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		76AA6D532924704500DFD82F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76AA6D552924717600DFD82F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				678E57752909C5580088A917 /* SceneDelegate.swift */,
 				678E57772909C5580088A917 /* ViewController.swift */,
 				678E57792909C5580088A917 /* Main.storyboard */,
+				7680C4512935C70F0037366C /* CalendarViewController.swift */,
 				219715882932F867004EA717 /* ItemsViewController.swift */,
 				213592C2292C63BA008DE145 /* AddItemViewController.swift */,
 				213592C4292C63EC008DE145 /* NewItemViewController.swift */,
@@ -293,6 +296,7 @@
 				76AA6D562924717600DFD82F /* SettingsViewController.swift in Sources */,
 				678E577E2909C5580088A917 /* CS329E_FinalProject.xcdatamodeld in Sources */,
 				213592C3292C63BA008DE145 /* AddItemViewController.swift in Sources */,
+				7680C4522935C70F0037366C /* CalendarViewController.swift in Sources */,
 				4019806F2914B2BE00B6914D /* CalculatorCellTableViewCell.swift in Sources */,
 				76AA6D542924704500DFD82F /* ProfileViewController.swift in Sources */,
 				678E57762909C5580088A917 /* SceneDelegate.swift in Sources */,
@@ -480,6 +484,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,6 +512,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
