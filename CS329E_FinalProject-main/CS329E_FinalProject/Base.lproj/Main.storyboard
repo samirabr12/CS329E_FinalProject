@@ -806,6 +806,9 @@
                                 <rect key="frame" x="158" y="409" width="76" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInButtonPressed:" destination="8hC-ED-Wl1" eventType="touchUpInside" id="abE-2s-CcW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="11" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iy-Ig-hLN">
                                 <rect key="frame" x="25" y="521" width="340" height="175"/>
@@ -822,6 +825,9 @@
                                     <segment title="" image="person.badge.key" catalog="system"/>
                                     <segment title="" image="person.crop.circle.badge.plus" catalog="system"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeSegmentedControl:" destination="8hC-ED-Wl1" eventType="valueChanged" id="wMz-06-MF7"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmz-dQ-n0M">
                                 <rect key="frame" x="25" y="164" width="79" height="65"/>
@@ -896,6 +902,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="kVz-eX-Uzl"/>
                     <connections>
+                        <outlet property="confirmPasswordLabel" destination="NXc-jm-Jij" id="WPE-Ib-UGX"/>
+                        <outlet property="confirmPasswordTextField" destination="BLS-RX-anm" id="d2U-Rv-HiD"/>
+                        <outlet property="passwordTextField" destination="8xE-rm-AWJ" id="5iv-jA-A9T"/>
+                        <outlet property="segmentedControl" destination="Nbn-oo-l1H" id="6GD-DW-lB6"/>
+                        <outlet property="signInButton" destination="maG-7X-AYQ" id="2ZK-Ky-fOq"/>
+                        <outlet property="statusLabel" destination="6iy-Ig-hLN" id="5LW-qo-yP9"/>
+                        <outlet property="userIDTextField" destination="ZfV-oA-dMp" id="2Jg-Bo-eFj"/>
                         <segue destination="anE-ld-OaJ" kind="show" identifier="afterLoginSegue" id="7Wj-K3-WKZ"/>
                     </connections>
                 </viewController>

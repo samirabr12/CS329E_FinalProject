@@ -31,6 +31,7 @@
 		7699C8692937289C0054A6B1 /* AddRecItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C8682937289C0054A6B1 /* AddRecItemViewController.swift */; };
 		7699C86C29374EB70054A6B1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7699C86B29374EB70054A6B1 /* FirebaseAuth */; };
 		7699C86E29374EC40054A6B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7699C86D29374EC40054A6B1 /* GoogleService-Info.plist */; };
+		7699C870293750BC0054A6B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C86F293750BC0054A6B1 /* LoginViewController.swift */; };
 		76AA6D542924704500DFD82F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA6D532924704500DFD82F /* ProfileViewController.swift */; };
 		76AA6D562924717600DFD82F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA6D552924717600DFD82F /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		7699C86629371A220054A6B1 /* RecommendedItemVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedItemVCViewController.swift; sourceTree = "<group>"; };
 		7699C8682937289C0054A6B1 /* AddRecItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecItemViewController.swift; sourceTree = "<group>"; };
 		7699C86D29374EC40054A6B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7699C86F293750BC0054A6B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		76AA6D532924704500DFD82F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76AA6D552924717600DFD82F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 				678E57752909C5580088A917 /* SceneDelegate.swift */,
 				678E57772909C5580088A917 /* ViewController.swift */,
 				678E57792909C5580088A917 /* Main.storyboard */,
+				7699C86F293750BC0054A6B1 /* LoginViewController.swift */,
 				7699C8682937289C0054A6B1 /* AddRecItemViewController.swift */,
 				7699C86629371A220054A6B1 /* RecommendedItemVCViewController.swift */,
 				672F20202936EB3A00034CB3 /* HomeViewController.swift */,
@@ -319,6 +322,7 @@
 				678E57782909C5580088A917 /* ViewController.swift in Sources */,
 				672F20212936EB3A00034CB3 /* HomeViewController.swift in Sources */,
 				678E57742909C5580088A917 /* AppDelegate.swift in Sources */,
+				7699C870293750BC0054A6B1 /* LoginViewController.swift in Sources */,
 				213592C5292C63EC008DE145 /* NewItemViewController.swift in Sources */,
 				4066E17C29138D8400169850 /* CalculatorViewController.swift in Sources */,
 				7699C865293705C30054A6B1 /* GroceryItem.swift in Sources */,
