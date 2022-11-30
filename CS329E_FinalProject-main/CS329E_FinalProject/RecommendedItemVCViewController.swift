@@ -15,7 +15,9 @@ class RecommendedItemViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func sodaButtonClicked(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
