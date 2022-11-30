@@ -28,6 +28,7 @@
 		7680C4522935C70F0037366C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7680C4512935C70F0037366C /* CalendarViewController.swift */; };
 		7699C865293705C30054A6B1 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C864293705C30054A6B1 /* GroceryItem.swift */; };
 		7699C86729371A220054A6B1 /* RecommendedItemVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C86629371A220054A6B1 /* RecommendedItemVCViewController.swift */; };
+		7699C8692937289C0054A6B1 /* AddRecItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C8682937289C0054A6B1 /* AddRecItemViewController.swift */; };
 		76AA6D542924704500DFD82F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA6D532924704500DFD82F /* ProfileViewController.swift */; };
 		76AA6D562924717600DFD82F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA6D552924717600DFD82F /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		7680C4512935C70F0037366C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		7699C864293705C30054A6B1 /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
 		7699C86629371A220054A6B1 /* RecommendedItemVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedItemVCViewController.swift; sourceTree = "<group>"; };
+		7699C8682937289C0054A6B1 /* AddRecItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecItemViewController.swift; sourceTree = "<group>"; };
 		76AA6D532924704500DFD82F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76AA6D552924717600DFD82F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +134,7 @@
 				678E57752909C5580088A917 /* SceneDelegate.swift */,
 				678E57772909C5580088A917 /* ViewController.swift */,
 				678E57792909C5580088A917 /* Main.storyboard */,
+				7699C8682937289C0054A6B1 /* AddRecItemViewController.swift */,
 				7699C86629371A220054A6B1 /* RecommendedItemVCViewController.swift */,
 				672F20202936EB3A00034CB3 /* HomeViewController.swift */,
 				7699C864293705C30054A6B1 /* GroceryItem.swift */,
@@ -312,6 +315,7 @@
 				213592C3292C63BA008DE145 /* AddItemViewController.swift in Sources */,
 				7680C4522935C70F0037366C /* CalendarViewController.swift in Sources */,
 				4019806F2914B2BE00B6914D /* CalculatorCellTableViewCell.swift in Sources */,
+				7699C8692937289C0054A6B1 /* AddRecItemViewController.swift in Sources */,
 				76AA6D542924704500DFD82F /* ProfileViewController.swift in Sources */,
 				40749E6B29360E8C00CDA5C0 /* DatabaseViewController.swift in Sources */,
 				7699C86729371A220054A6B1 /* RecommendedItemVCViewController.swift in Sources */,

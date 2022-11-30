@@ -22,9 +22,9 @@ class NewItemViewController: UIViewController {
     
     var groceryItem:GroceryItem = GroceryItem()
     
-    var itemName: String = ""
-    var priceItem: Float = -1.0
-    var quantityItem: Int = -1
+    var itemName: String?
+    var priceItem: Float?
+    var quantityItem: Int?
     let systemSoundID: SystemSoundID = 1325
     
     var delegate1:UIViewController?
@@ -35,11 +35,11 @@ class NewItemViewController: UIViewController {
     
     @IBAction func addItemToList(_ sender: Any) {
         itemName = itemInput.text!
-        priceItem = Float(priceInput.text!) ?? -1.0
-        quantityItem = Int(quantityInput.text!) ?? -1
+        priceItem = Float(priceInput.text!)
+        quantityItem = Int(quantityInput.text!)
         //listAdd = Int(listAddedTo.text!) ?? -1
         
-        if itemName.isEmpty {
+        if itemName == "" {
             let controller = UIAlertController(
                 title: "Missing item name",
                 message: "Please enter the name of the item",
@@ -51,7 +51,7 @@ class NewItemViewController: UIViewController {
             present(controller, animated:true)
         }
         
-        if priceItem == -1.0 {
+        if priceItem == nil {
             let controller = UIAlertController(
                 title: "Missing price",
                 message: "Please enter the price of the item",
@@ -63,7 +63,7 @@ class NewItemViewController: UIViewController {
             present(controller, animated:true)
         }
         
-        if quantityItem == -1 {
+        if quantityItem == nil {
             let controller = UIAlertController(
                 title: "Missing quantity",
                 message: "Please enter the quantity of the item (Whole numbers only!)",
@@ -91,30 +91,29 @@ class NewItemViewController: UIViewController {
         
         //add item to list
 
-        if quantityItem > -1 {
-            if priceItem > -1 {
+        if quantityItem != nil {
+            if priceItem != nil {
                 AudioServicesPlaySystemSound(systemSoundID)
-            }
+                let controller = UIAlertController(
+                    title: "Add successful!",
+                    message: "Item added to list",
+                    preferredStyle: .alert)
+                controller.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .default
+                ))
+                present(controller, animated:true)
+                
+                groceryItem.newItem = itemName
+                groceryItem.price = priceItem
+                groceryItem.quantity = quantityItem
+                let mainVC = delegate1 as? AddItemToList
+                mainVC?.addItem(addedItem: groceryItem)
+                groceryItem = GroceryItem()            }
         }
 
         
-        let controller = UIAlertController(
-            title: "Add successful!",
-            message: "Item added to list",
-            preferredStyle: .alert)
-        controller.addAction(UIAlertAction(
-            title: "OK",
-            style: .default
-        ))
-        present(controller, animated:true)
         
-        
-        groceryItem.newItem = itemName
-        groceryItem.price = priceItem
-        groceryItem.quantity = quantityItem
-        let mainVC = delegate1 as? AddItemToList
-        mainVC?.addItem(addedItem: groceryItem)
-        groceryItem = GroceryItem()
         
     }
 //    @IBOutlet weak var itemNameText: UITextField!

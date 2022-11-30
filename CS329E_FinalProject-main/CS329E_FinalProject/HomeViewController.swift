@@ -11,6 +11,8 @@ import CoreData
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
 
+var groceryList: [GroceryItem] = []
+
 protocol AddItemToList {
     func addItem(addedItem: GroceryItem)
 }
@@ -21,15 +23,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let textCellIdentifier = "listCell"
     
-    var groceryList: [GroceryItem] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         listTableView.delegate = self
         listTableView.dataSource = self
         
         //core data
-        self.coreData()
+        coreData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,7 +112,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func addItem(addedItem: GroceryItem) {
         groceryList.append(addedItem)
-        listTableView.reloadData()
+        self.listTableView.reloadData()
         
         let storedItem = NSEntityDescription.insertNewObject(forEntityName: "NewItem", into: context)
         
