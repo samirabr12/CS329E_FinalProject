@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
@@ -73,6 +74,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     
+    @IBAction func logout(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            self.dismiss(animated: true)
+        } catch {
+            print("Sign out error")
+        }     }    
     //core data function
     func coreData(){
         //clearCoreData()
