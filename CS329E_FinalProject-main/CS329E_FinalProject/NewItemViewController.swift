@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
@@ -14,9 +15,12 @@ let context = appDelegate.persistentContainer.viewContext
 class NewItemViewController: UIViewController {
     @IBOutlet weak var itemNameText: UITextField!
     @IBOutlet weak var itemPriceText: UITextField!
+    @IBOutlet weak var quantityPriceText: UILabel!
     
+    let systemSoundID: SystemSoundID = 1325
     var missingNameAlert = UIAlertController(title: "Error: Missing Item Name", message: "Please input an item name.", preferredStyle: .alert)
     var missingPriceAlert = UIAlertController(title: "Error: Missing Item Price", message: "Please input the item price.", preferredStyle: .alert)
+    var missingQuantityAlert = UIAlertController(title: "Error: Missing Item Quantity", message: "Please input the item quantity.", preferredStyle: .alert)
     var itemSavedAlert = UIAlertController(title: "Save Successful", message: "Item saved!", preferredStyle: .alert)
     
     override func viewDidLoad() {
@@ -35,6 +39,11 @@ class NewItemViewController: UIViewController {
             present(missingPriceAlert, animated: true)
         }
         
+        if quantityPriceText.text == nil {
+            present(missingQuantityAlert, animated: true)
+        }
+        
+        AudioServicesPlaySystemSound(systemSoundID)
         storeItem(name: itemNameText, price: itemPriceText)
         present(itemSavedAlert, animated: true)
     }
