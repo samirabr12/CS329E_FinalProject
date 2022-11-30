@@ -12,14 +12,36 @@ class CalculatorCellTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var priceField: UITextField!
     var delegate: UIViewController!
     var cellIndexPath: IndexPath!
-    var xyz: Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         nameField.delegate = self
         priceField.delegate = self
-        //print(delegate)
        }
+    
+    //formats keyboard input so only 2 decimal places
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        if textField == self.priceField {
+            guard let inputText = textField.text, let rangeDecimal = Range(range, in: inputText) else {
+                return true
+            }
+
+            let tempText = inputText.replacingCharacters(in: rangeDecimal, with: string)
+            let numCheck = tempText.isEmpty || (Double(tempText) != nil)
+            let deciCount = tempText.components(separatedBy: ".").count - 1
+
+            let digitCount: Int
+            if let dotIndex = tempText.firstIndex(of: ".") {
+                digitCount = tempText.distance(from: dotIndex, to: tempText.endIndex) - 1
+            }
+            else {
+                digitCount = 0
+            }
+
+            return (numCheck) && (deciCount <= 1) && (digitCount <= 2)
+        }
+        return true
+    }
     
     // Called when 'return' key pressed
     func textFieldShouldReturn(_ textField:UITextField) -> Bool {
@@ -29,7 +51,6 @@ class CalculatorCellTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     // Called when the user clicks on the view outside of the UITextField
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("HEREHEREHERE")
         let calcVC = delegate as! addExistItems
         calcVC.keyboardTap()
     }
