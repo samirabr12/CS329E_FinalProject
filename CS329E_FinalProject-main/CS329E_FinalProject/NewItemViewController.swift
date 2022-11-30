@@ -22,20 +22,25 @@ class NewItemViewController: UIViewController {
     
     var groceryItem:GroceryItem = GroceryItem()
     
+    var previousVC:UIViewController?
+    
     var itemName: String?
-    var priceItem: Float?
+    var priceItem: Float? = 0.0
     var quantityItem: Int?
     let systemSoundID: SystemSoundID = 1325
     
+    @IBOutlet weak var priceLabel: UILabel!
     var delegate1:UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        priceLabel.isHidden = true
+        priceInput.isHidden = true
     }
     
     @IBAction func addItemToList(_ sender: Any) {
         itemName = itemInput.text!
-        priceItem = Float(priceInput.text!)
+        priceItem = 0
         quantityItem = Int(quantityInput.text!)
         //listAdd = Int(listAddedTo.text!) ?? -1
         
@@ -104,9 +109,9 @@ class NewItemViewController: UIViewController {
                 ))
                 present(controller, animated:true)
                 
-                groceryItem.newItem = itemName
+                groceryItem.newItem = itemName!
                 groceryItem.price = priceItem
-                groceryItem.quantity = quantityItem
+                groceryItem.quantity = quantityItem!
                 let mainVC = delegate1 as? AddItemToList
                 mainVC?.addItem(addedItem: groceryItem)
                 groceryItem = GroceryItem()            }
@@ -115,6 +120,13 @@ class NewItemViewController: UIViewController {
         
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "quickAddSegue",
+           let nextVC = segue.destination as? RecommendedItemViewController {
+            nextVC.previousVC = previousVC
+        }
     }
 //    @IBOutlet weak var itemNameText: UITextField!
 //    @IBOutlet weak var itemPriceText: UITextField!

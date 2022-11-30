@@ -9,9 +9,9 @@ import Foundation
 import CoreData
 
 public class GroceryItem: NSManagedObject {
-    var newItem: String?
+    var newItem: String = ""
     var price: Float?
-    var quantity: Int?
+    var quantity: Int = 0
     var itemID:NSManagedObjectID?
 
     /*init(item: String, itemPrice: Float, itemQuantity: Int) {

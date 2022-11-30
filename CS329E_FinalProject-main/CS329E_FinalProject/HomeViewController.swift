@@ -17,10 +17,10 @@ protocol AddItemToList {
     func addItem(addedItem: GroceryItem)
 }
 
+
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddItemToList {
     
-   @IBOutlet weak var listTableView: UITableView!
-    
+    @IBOutlet weak var listTableView: UITableView!
     let textCellIdentifier = "listCell"
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = listTableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! ItemTableViewCell
         let row = indexPath.row
         let item = groceryList[row]
-        cell.itemLabelName?.text = "\(item.newItem!)"
+        cell.itemLabelName?.text = "\(item.newItem)" + ": " + "\(item.quantity)"
         return cell
     }
     
@@ -75,12 +75,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //core data function
     func coreData(){
+        //clearCoreData()
         let fetchedResult = retrieveList()
 
         for element in fetchedResult {
             let newItem = GroceryItem()
-            newItem.newItem = element.value(forKey: "itemName") as? String
-            newItem.quantity = element.value(forKey: "quantityInput") as? Int
+            newItem.newItem = (element.value(forKey: "itemName") as? String)!
+            newItem.quantity = (element.value(forKey: "quantityInput") as? Int)!
             newItem.price = element.value(forKey: "priceInput") as? Float
             newItem.itemID = element.objectID
             groceryList.append(newItem)
@@ -90,7 +91,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addItemSegue",
             let nextVC = segue.destination as? NewItemViewController{
-            nextVC.delegate1 = self        }
+            nextVC.previousVC = self
+            nextVC.delegate1 = self
+
+        }
    }
 
     /*func saveList() {
@@ -145,8 +149,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return(fetchedResult)!
     }
     
-    /*func clearCoreData() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ItemEntity")
+    func clearCoreData() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NewItem")
         var fetchedResult:[NSManagedObject]
         do {
             try fetchedResult = context.fetch(request) as! [NSManagedObject]
@@ -161,7 +165,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-    }*/
+    }
     
     
     /*func storeList(newItem: String, price: Float, quantity: Int){
