@@ -20,6 +20,7 @@ class NewItemViewController: UIViewController {
     
     @IBOutlet weak var quantityInput: UITextField!
     
+
     var groceryItem:GroceryItem = GroceryItem()
     
     var previousVC:UIViewController?
@@ -80,26 +81,27 @@ class NewItemViewController: UIViewController {
             present(controller, animated:true)
         }
         
-//        if listAdd == -1 {
-//            let controller = UIAlertController(
-//                title: "Missing list name",
-//                message: "Please enter the list you would like to add this item to",
-//                preferredStyle: .alert)
-//            controller.addAction(UIAlertAction(
-//                title: "OK",
-//                style: .default
-//            ))
-//            present(contricoller, animated:true)
-//        }
+        //        if listAdd == -1 {
+        //            let controller = UIAlertController(
+        //                title: "Missing list name",
+        //                message: "Please enter the list you would like to add this item to",
+        //                preferredStyle: .alert)
+        //            controller.addAction(UIAlertAction(
+        //                title: "OK",
+        //                style: .default
+        //            ))
+        //            present(contricoller, animated:true)
+        //        }
         
-
+        
         
         //add item to list
-
+        
         if quantityItem != nil {
             if priceItem != nil {
                 if soundSetting {
                     AudioServicesPlaySystemSound(systemSoundID)}
+                
                 let controller = UIAlertController(
                     title: "Add successful!",
                     message: "Item added to list",
@@ -110,18 +112,33 @@ class NewItemViewController: UIViewController {
                 ))
                 present(controller, animated:true)
                 
+                /*if notifSetting {
+                    let content = UNMutableNotificationContent()
+                    content.title = "Added Item"
+                    content.subtitle = "Notfication Alert"
+                    content.body = "You have added an item to your list!"
+                    content.sound = UNNotificationSound.default
+                    
+                    // create trigger
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 8, repeats: false)
+                    
+                    // combine it all into a request
+                    let request = UNNotificationRequest(identifier: "myNotification", content: content, trigger: trigger)
+                    
+                    UNUserNotificationCenter.current().add(request)                     }*/
+                
                 groceryItem.newItem = itemName!
                 groceryItem.price = priceItem
                 groceryItem.quantity = quantityItem!
                 let mainVC = delegate1 as? AddItemToList
                 mainVC?.addItem(addedItem: groceryItem)
                 groceryItem = GroceryItem()            }
-        }
+        }}
 
         
         
         
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "quickAddSegue",
