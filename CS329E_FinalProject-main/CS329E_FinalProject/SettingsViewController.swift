@@ -8,6 +8,7 @@
 import UIKit
 
 var soundSetting:Bool = true
+var notifSetting:Bool = false
 
 class SettingsViewController: UIViewController {
 
@@ -33,11 +34,15 @@ class SettingsViewController: UIViewController {
                     print(error.localizedDescription)
                 }
             }
-            DispatchQueue.main.async(execute: {
+            /*DispatchQueue.main.async(execute: {
                 UIApplication.shared.registerForRemoteNotifications()})
-            print(UIApplication.shared.isRegisteredForRemoteNotifications)
+            print(UIApplication.shared.isRegisteredForRemoteNotifications)*/
+            notifSetting = true
         }
         else {
+            notifSetting = false
+        }
+        /*else {
             UIApplication.shared.unregisterForRemoteNotifications()
             let controller = UIAlertController(
                 title: "Notifications",
@@ -49,7 +54,7 @@ class SettingsViewController: UIViewController {
             present(controller, animated: true)
             
             print(UIApplication.shared.isRegisteredForRemoteNotifications)
-        }
+        }*/
     }
     
     @IBAction func soundSettingChanged(_ sender: Any) {
