@@ -112,7 +112,7 @@ class NewItemViewController: UIViewController {
                 ))
                 present(controller, animated:true)
                 
-                /*if notifSetting {
+                if notifSetting {
                     let content = UNMutableNotificationContent()
                     content.title = "Added Item"
                     content.subtitle = "Notfication Alert"
@@ -125,7 +125,7 @@ class NewItemViewController: UIViewController {
                     // combine it all into a request
                     let request = UNNotificationRequest(identifier: "myNotification", content: content, trigger: trigger)
                     
-                    UNUserNotificationCenter.current().add(request)                     }*/
+                    UNUserNotificationCenter.current().add(request)                     }
                 
                 groceryItem.newItem = itemName!
                 groceryItem.price = priceItem
