@@ -698,25 +698,103 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zFz-EI-sxJ" kind="relationship" relationship="rootViewController" id="mDn-gT-aVf"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVh-nZ-E0l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1719.8473282442746" y="1436.6197183098593"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="aHm-LO-Gfg">
             <objects>
-                <viewController id="zFz-EI-sxJ" sceneMemberID="viewController">
+                <viewController id="zFz-EI-sxJ" customClass="ProfileViewController" customModule="CS329E_FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eye-mb-bSp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiR-RY-A4e">
+                                <rect key="frame" x="16" y="261" width="152" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add from Library"/>
+                                <connections>
+                                    <action selector="librarySelected:" destination="zFz-EI-sxJ" eventType="touchUpInside" id="epq-XH-VFc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgU-A8-GEH">
+                                <rect key="frame" x="213" y="261" width="159" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add from Camera"/>
+                                <connections>
+                                    <action selector="cameraSelected:" destination="zFz-EI-sxJ" eventType="touchUpInside" id="XXu-H3-Ojx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJk-xR-SZ5">
+                                <rect key="frame" x="114" y="564" width="166" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change Username"/>
+                                <connections>
+                                    <action selector="changeUsername:" destination="zFz-EI-sxJ" eventType="touchUpInside" id="jrQ-Zp-8Zv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oN-Mf-zmg">
+                                <rect key="frame" x="133" y="631" width="128" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change Email"/>
+                                <connections>
+                                    <action selector="changeEmail:" destination="zFz-EI-sxJ" eventType="touchUpInside" id="TPz-QJ-ujV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSo-kN-5gw">
+                                <rect key="frame" x="41" y="438" width="54" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2Z-bw-Lmr">
+                                <rect key="frame" x="176" y="438" width="186" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lai-lK-in0">
+                                <rect key="frame" x="77" y="82" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDX-We-odX">
+                                <rect key="frame" x="117" y="699" width="161" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change Password"/>
+                                <connections>
+                                    <action selector="changePassword:" destination="zFz-EI-sxJ" eventType="touchUpInside" id="2de-8w-Z3E"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="EoU-4W-LgR"/>
                         <color key="backgroundColor" red="0.89409846069999999" green="1" blue="0.96470504999999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Qsr-WK-64l"/>
+                    <connections>
+                        <outlet property="addCamera" destination="TgU-A8-GEH" id="yEj-Hc-RbQ"/>
+                        <outlet property="addLibrary" destination="MiR-RY-A4e" id="ueB-yK-X68"/>
+                        <outlet property="changeEmailButton" destination="3oN-Mf-zmg" id="uAB-Du-NRv"/>
+                        <outlet property="changePasswordButton" destination="RDX-We-odX" id="kSO-aa-T3g"/>
+                        <outlet property="changeUsernameButton" destination="qJk-xR-SZ5" id="vz1-rC-7ue"/>
+                        <outlet property="namePrinted" destination="i2Z-bw-Lmr" id="J2z-fD-AN4"/>
+                        <outlet property="profilePicture" destination="Lai-lK-in0" id="rX0-eC-sqw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HB1-f2-gmK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="1454"/>
+            <point key="canvasLocation" x="2443.5114503816794" y="1453.5211267605634"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="5WM-pF-o0b">
