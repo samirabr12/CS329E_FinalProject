@@ -20,17 +20,17 @@ class NewItemViewController: UIViewController {
     
     @IBOutlet weak var quantityInput: UITextField!
     
-    //@IBOutlet weak var listAddedTo: UITextField!
+    var groceryItem:GroceryItem = GroceryItem()
     
     var itemName: String = ""
     var priceItem: Float = -1.0
     var quantityItem: Int = -1
-    //var listAdd: Int = -1
     let systemSoundID: SystemSoundID = 1325
+    
+    var delegate1:UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    //reload data?
     }
     
     @IBAction func addItemToList(_ sender: Any) {
@@ -109,8 +109,12 @@ class NewItemViewController: UIViewController {
         present(controller, animated:true)
         
         
-        let addItem = NewItem(newItem: itemName, price: priceItem, quantity: quantityItem)
-        groceryList.append(addItem)
+        groceryItem.newItem = itemName
+        groceryItem.price = priceItem
+        groceryItem.quantity = quantityItem
+        let mainVC = delegate1 as? AddItemToList
+        mainVC?.addItem(addedItem: groceryItem)
+        groceryItem = GroceryItem()
         
     }
 //    @IBOutlet weak var itemNameText: UITextField!

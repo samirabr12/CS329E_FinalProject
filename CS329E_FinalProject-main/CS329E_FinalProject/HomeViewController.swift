@@ -8,25 +8,29 @@
 import UIKit
 import CoreData
 
-let appDelegate = UIApplication.shared.delegate
-//let context = appDelegate.persistentContainer.viewContext
-let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
+let context = appDelegate.persistentContainer.viewContext
 
-var groceryList: [NewItem] = []
+protocol AddItemToList {
+    func addItem(addedItem: GroceryItem)
+}
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var listTableView: UITableView!
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddItemToList {
+    
+   @IBOutlet weak var listTableView: UITableView!
+    
     let textCellIdentifier = "listCell"
+    
+    var groceryList: [GroceryItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         listTableView.delegate = self
         listTableView.dataSource = self
-        self.reloadGroceryList()
-        // Do any additional setup after loading the view.
+        
+        //core data
+        self.coreData()
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groceryList.count
@@ -35,56 +39,102 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listTableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! ItemTableViewCell
         let row = indexPath.row
-        cell.itemLabelName?.text = "\(groceryList[row].newItem)"
+        let item = groceryList[row]
+        cell.itemLabelName?.text = "\(item.newItem!)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            groceryList.remove(at: indexPath.row)
+            let toDelete = groceryList.remove(at: indexPath.row)
             listTableView.deleteRows(at: [indexPath], with: .fade)
-            saveList()
-        } else if editingStyle == .insert {
+            
+            //delete from core data
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NewItem")
+            var fetchedResults:[NSManagedObject]
+            do {
+                try fetchedResults = context.fetch(request) as! [NSManagedObject]
+    
+                if fetchedResults.count > 0 {
+                    for result:AnyObject in fetchedResults {
+                        if result.objectID == toDelete.itemID{
+                            context.delete(result as! NSManagedObject)
+                        }
+                    }
+                }
+                saveContext()
+                
+            } catch {
+                // if an error occurs
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }        }
+            
         }
-    }
     
-    
-    func reloadGroceryList(){
+    //core data function
+    func coreData(){
         let fetchedResult = retrieveList()
-//        pizzaList.removeAll()
+
         for element in fetchedResult {
-            let newItem = NewItem(newItem: element.value(forKey: "newItem") as! String,
-                                price: element.value(forKey: "price") as! Float,
-                                quantity: element.value(forKey: "quantity") as! Int)
+            let newItem = GroceryItem()
+            newItem.newItem = element.value(forKey: "itemName") as? String
+            newItem.quantity = element.value(forKey: "quantityInput") as? Int
+            newItem.price = element.value(forKey: "priceInput") as? Float
+            newItem.itemID = element.objectID
             groceryList.append(newItem)
         }
     }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        <#code#>
-//    }
-//
-    func saveList() {
-        clearCoreData()
-        for item in groceryList {
-            storeList(newItem: item.newItem, price: item.price, quantity: item.quantity)
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addItemSegue",
+            let nextVC = segue.destination as? NewItemViewController{
+            nextVC.delegate1 = self        }
+   }
+
+    /*func saveList() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
         }
-    }
-    override func viewWillAppear(_ animated: Bool) {
+        
+    }*/
+    /*override func viewWillAppear(_ animated: Bool) {
         listTableView.reloadData()
+    }*/
+    @IBAction func addItemButton(_ sender: Any) {
     }
     
-    func newItem(_ item: NewItem) {
-        storeList(newItem: item.newItem, price: item.price, quantity: item.quantity)
+    func addItem(addedItem: GroceryItem) {
+        groceryList.append(addedItem)
+        listTableView.reloadData()
+        
+        let storedItem = NSEntityDescription.insertNewObject(forEntityName: "NewItem", into: context)
+        
+        storedItem.setValue(addedItem.newItem, forKey: "itemName")
+        storedItem.setValue(addedItem.price, forKey: "priceInput")
+        storedItem.setValue(addedItem.quantity, forKey: "quantityInput")
+        
+        saveContext()
+    }
+    
+    /*func newItem(_ item: GroceryItem) {
+        storeList(newItem: item.newItem!, price: item.price!, quantity: item.quantity!)
         groceryList.append(item)
         listTableView.reloadData()
-    }
+    }*/
     
     func retrieveList() -> [NSManagedObject] {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ItemEntity")
+        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NewItem")
         var fetchedResult:[NSManagedObject]? = nil
+        
         do {
             try fetchedResult = context.fetch(request) as? [NSManagedObject]
         } catch {
@@ -95,7 +145,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return(fetchedResult)!
     }
     
-    func clearCoreData() {
+    /*func clearCoreData() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ItemEntity")
         var fetchedResult:[NSManagedObject]
         do {
@@ -111,16 +161,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-    }
+    }*/
     
     
-    func storeList(newItem: String, price: Float, quantity: Int){
+    /*func storeList(newItem: String, price: Float, quantity: Int){
         let item = NSEntityDescription.insertNewObject(forEntityName: "ItemEntity", into: context)
         item.setValue(newItem, forKey: "newItem")
         item.setValue(price, forKey: "price")
         item.setValue(quantity, forKey: "quantity")
         saveContext()
-    }
+    }*/
     
     func saveContext () {
         if context.hasChanges {
@@ -133,8 +183,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func addItem(newItem: NewItem){
+    /*func addItem(newItem: GroceryItem){
         groceryList.append(newItem)
-    }
+    }*/
 
 }
