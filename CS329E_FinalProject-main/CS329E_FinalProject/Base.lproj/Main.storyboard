@@ -26,10 +26,11 @@
                                 </segments>
                                 <connections>
                                     <action selector="switchItem:" destination="Grx-oa-1vt" eventType="valueChanged" id="Hic-Rf-4a3"/>
+                                    <segue destination="1TP-V4-fmQ" kind="show" identifier="newItemSegue" id="FVF-8B-xSa"/>
                                 </connections>
                             </segmentedControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcn-86-Icd">
-                                <rect key="frame" x="20" y="154" width="374" height="659"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="707"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="HtD-es-AaU"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="DFn-sq-HBf"/>
@@ -425,6 +426,7 @@
                         <viewLayoutGuide key="safeArea" id="JKP-AM-0EW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tQK-Ax-DLL"/>
                     <connections>
                         <outlet property="itemInput" destination="B3M-sv-AJL" id="fhf-os-CLs"/>
                         <outlet property="itemNameText" destination="B3M-sv-AJL" id="CX8-TM-wMs"/>
@@ -438,10 +440,10 @@
             </objects>
             <point key="canvasLocation" x="4679.7101449275369" y="792.52232142857144"/>
         </scene>
-        <!--Existing Item View Controller-->
+        <!--RecommendedItemViewController-->
         <scene sceneID="2xq-Ww-MQu">
             <objects>
-                <viewController id="lEq-0U-pDp" customClass="ExistingItemViewController" customModule="CS329E_FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="RecommendedItemViewController" id="lEq-0U-pDp" customClass="ExistingItemViewController" customModule="CS329E_FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OMA-B8-KJR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -457,10 +459,11 @@
                         <viewLayoutGuide key="safeArea" id="eBY-MW-nnV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="c9Q-ii-dCl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1V-pr-AC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4680.1526717557254" y="1334.8591549295775"/>
+            <point key="canvasLocation" x="4328" y="1436"/>
         </scene>
         <!--Calculator-->
         <scene sceneID="O7Y-6I-S64">
