@@ -7,9 +7,15 @@
 
 import UIKit
 
+var soundSetting:Bool = true
+
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var notifSwitch: UISwitch!
+    
+    @IBOutlet weak var soundSwitch: UISwitch!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,4 +51,14 @@ class SettingsViewController: UIViewController {
             print(UIApplication.shared.isRegisteredForRemoteNotifications)
         }
     }
+    
+    @IBAction func soundSettingChanged(_ sender: Any) {
+        if soundSwitch.isOn {
+            soundSetting = true
+        }
+        else {
+            soundSetting = false
+        }
+    }
+    
 }

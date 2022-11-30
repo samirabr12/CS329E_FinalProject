@@ -339,6 +339,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7O-0x-1OB">
                                 <rect key="frame" x="265" y="315" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="soundSettingChanged:" destination="p6I-kf-0S6" eventType="valueChanged" id="s2E-xB-7zm"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mcL-rB-cFB">
                                 <rect key="frame" x="265" y="433" width="49" height="31"/>
@@ -351,6 +354,7 @@
                     <navigationItem key="navigationItem" id="7ia-T0-Dj9"/>
                     <connections>
                         <outlet property="notifSwitch" destination="Tk1-2q-I9H" id="uq4-7a-hRJ"/>
+                        <outlet property="soundSwitch" destination="o7O-0x-1OB" id="M2w-hH-r9l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I39-2y-yzv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

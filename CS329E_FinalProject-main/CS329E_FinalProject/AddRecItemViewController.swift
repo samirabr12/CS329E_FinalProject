@@ -54,7 +54,7 @@ class AddRecItemViewController: UIViewController {
         //add item to list
 
         else{
-                AudioServicesPlaySystemSound(systemSoundID)
+            if soundSetting {AudioServicesPlaySystemSound(systemSoundID)}
                 let controller = UIAlertController(
                     title: "Add successful!",
                     message: "Item added to list",
