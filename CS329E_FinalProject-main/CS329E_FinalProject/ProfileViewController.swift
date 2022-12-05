@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
-        profilePicture.image = UIImage(named: "startProfilePic")
+        //profilePicture.image = UIImage(named: "startProfilePic")
         profilePicture.layer.borderWidth = 1
         profilePicture.layer.masksToBounds = false
         profilePicture.layer.borderColor = UIColor.black.cgColor
