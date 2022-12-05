@@ -73,6 +73,20 @@ class AddRecItemViewController: UIViewController {
             
             groceryItem = GroceryItem()
             
+            if notifSetting {
+                let content = UNMutableNotificationContent()
+                content.title = "Added Item"
+                content.subtitle = "Notfication Alert"
+                content.body = "You have added an item to your list!"
+                content.sound = UNNotificationSound.default
+                
+                // create trigger
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 8, repeats: false)
+                
+                // combine it all into a request
+                let request = UNNotificationRequest(identifier: "myNotification", content: content, trigger: trigger)
+                
+                UNUserNotificationCenter.current().add(request)                     }
         }
         }
 

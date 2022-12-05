@@ -16,14 +16,17 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var soundSwitch: UISwitch!
     
-    
+    var soundSwitchState: Bool!
+    var notifSwitchState: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        soundSwitch.isOn = UserDefaults.standard.bool(forKey: "soundSwitchState")
+        notifSwitch.isOn = UserDefaults.standard.bool(forKey: "notifSwitchState")
         // Do any additional setup after loading the view.
     }
     
     @IBAction func notifSwitchChanged(_ sender: Any) {
+        UserDefaults.standard.set(notifSwitch.isOn, forKey: "notifSwitchState" )
         if notifSwitch.isOn {
             UNUserNotificationCenter.current().requestAuthorization(options:[.alert,.badge,.sound]) {
                 granted, error in
@@ -38,9 +41,11 @@ class SettingsViewController: UIViewController {
                 UIApplication.shared.registerForRemoteNotifications()})
             print(UIApplication.shared.isRegisteredForRemoteNotifications)*/
             notifSetting = true
+            //notifSwitch.isOn = true
         }
         else {
             notifSetting = false
+            //notifSwitch.isOn = false
         }
         /*else {
             UIApplication.shared.unregisterForRemoteNotifications()
@@ -58,11 +63,14 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func soundSettingChanged(_ sender: Any) {
+        UserDefaults.standard.set(soundSwitch.isOn, forKey: "soundSwitchState" )
         if soundSwitch.isOn {
             soundSetting = true
+            //soundSwitch.isOn = true
         }
         else {
             soundSetting = false
+            //soundSwitch.isOn = false
         }
     }
     
