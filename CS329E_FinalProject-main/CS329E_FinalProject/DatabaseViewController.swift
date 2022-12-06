@@ -34,7 +34,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
         let itemSource = self.retrieveItems()
         for item in itemSource {
             self.nameSource.append(item.value(forKey: "itemName") as! String)
-            self.priceSource.append(item.value(forKey: "itemPrice") as! Decimal)
+            self.priceSource.append(item.value(forKey: "priceInput") as! Decimal)
         }
        /*
         let queue = DispatchQueue(label: "loadQueue", qos: .background)

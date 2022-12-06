@@ -14,6 +14,8 @@ class AddRecItemViewController: UIViewController {
     
     @IBOutlet weak var quantityInput: UITextField!
     
+    @IBOutlet weak var priceInput: UITextField!
+    
     var selectedItem: String?
     
     let systemSoundID: SystemSoundID = 1325
@@ -46,7 +48,7 @@ class AddRecItemViewController: UIViewController {
     @IBAction func saveItemButton(_ sender: Any) {
         let itemName = selectedItem
         let quantityItem = Int(quantityInput.text!)
-        
+        let priceItem = Float(priceInput.text!)
         if quantityItem == nil {
             let controller = UIAlertController(
                 title: "Missing quantity",
@@ -58,6 +60,16 @@ class AddRecItemViewController: UIViewController {
             ))
             present(controller, animated:true)
         }
+        else if priceItem == nil {
+            let controller = UIAlertController(
+                title: "Missing price",
+                message: "Please enter the price of the item",
+                preferredStyle: .alert)
+            controller.addAction(UIAlertAction(
+                title: "OK",
+                style: .default
+            ))
+            present(controller, animated:true)        }
         else{
             if soundSetting {AudioServicesPlaySystemSound(systemSoundID)}
                 let controller = UIAlertController(
@@ -72,6 +84,7 @@ class AddRecItemViewController: UIViewController {
                 
             groceryItem.newItem = itemName!
             groceryItem.quantity = quantityItem!
+            groceryItem.price = priceItem
             
             let mainVC = previousVC as? AddItemToList
             mainVC!.addItem(addedItem: groceryItem)

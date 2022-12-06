@@ -15,6 +15,8 @@ class NewItemViewController: UIViewController {
     
     @IBOutlet weak var quantityInput: UITextField!
     
+    @IBOutlet weak var priceInput: UITextField!
+    
     var groceryItem:GroceryItem = GroceryItem()
     
     var previousVC:UIViewController?
@@ -48,7 +50,7 @@ class NewItemViewController: UIViewController {
     
     @IBAction func addItemToList(_ sender: Any) {
         itemName = itemInput.text!
-        priceItem = 0
+        priceItem = Float(priceInput.text!)
         quantityItem = Int(quantityInput.text!)
         
         if itemName == "" {
