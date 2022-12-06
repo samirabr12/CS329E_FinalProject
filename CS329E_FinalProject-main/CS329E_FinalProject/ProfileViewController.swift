@@ -7,16 +7,13 @@
 
 import UIKit
 import AVFoundation
+import FirebaseAuth
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var changeUsernameButton: UIButton!
     
     @IBOutlet weak var namePrinted: UILabel!
-    
-    @IBOutlet weak var changeEmailButton: UIButton!
-    
-    @IBOutlet weak var changePasswordButton: UIButton!
     
     @IBOutlet weak var profilePicture: UIImageView!
     
@@ -257,112 +254,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         //}
     }
     
-    
-    @IBAction func changeEmail(_ sender: Any) {
-            
-        let controller = UIAlertController(
-            title: "Profile Email",
-            message: "Change email",
-            preferredStyle: .alert)
-        controller.addAction(UIAlertAction(
-            title: "Cancel",
-            style: .cancel))
-        controller.addTextField(configurationHandler: {
-            (textField:UITextField!) in
-            textField.placeholder = "Enter new email"
-        })
-        controller.addAction(UIAlertAction(
-            title: "OK",
-            style: .default,
-            handler: {
-                (paramAction:UIAlertAction!) in
-                if let textFieldArray = controller.textFields {
-                    let textFields = textFieldArray as [UITextField]
-                    self.newEmail = textFields[0].text!
-                }
-            }))
-        present(controller, animated: true)
-        
-        if self.email != self.newEmail {
-            self.email = self.newEmail
-            let controller = UIAlertController(
-                title: "Success!",
-                message: "Email changed",
-                preferredStyle: .alert)
-            controller.addAction(UIAlertAction(
-                title: "OK",
-                style: .default
-            ))
-            present(controller, animated:true)
-        } else if self.newEmail.contains("@") == false {
-            let controller = UIAlertController(
-                title: "Error",
-                message: "Email must be valid",
-                preferredStyle: .alert)
-            controller.addAction(UIAlertAction(
-                title: "OK",
-                style: .default
-            ))
-            present(controller, animated:true)
-        }
-    }
-    
-    
-    @IBAction func changePassword(_ sender: Any) {
-        let controller = UIAlertController(
-            title: "Profile Password",
-            message: "Change password",
-            preferredStyle: .alert)
-        controller.addAction(UIAlertAction(
-            title: "Cancel",
-            style: .cancel))
-        controller.addTextField(configurationHandler: {
-            (textField:UITextField!) in
-            textField.placeholder = "Enter new password"
-        })
-        controller.addAction(UIAlertAction(
-            title: "OK",
-            style: .default,
-            handler: {
-                (paramAction:UIAlertAction!) in
-                if let textFieldArray = controller.textFields {
-                    let textFields = textFieldArray as [UITextField]
-                    self.newPassword = textFields[0].text!
-                }
-            }))
-        present(controller, animated: true)
-        
-        if password != newPassword {
-            self.password = self.newPassword
-            let controller = UIAlertController(
-                title: "Success!",
-                message: "Password changed",
-                preferredStyle: .alert)
-            controller.addAction(UIAlertAction(
-                title: "OK",
-                style: .default
-            ))
-            present(controller, animated:true)
-        } else {
-            let controller = UIAlertController(
-                title: "Error",
-                message: "New password can not be the same as previous password",
-                preferredStyle: .alert)
-            controller.addAction(UIAlertAction(
-                title: "OK",
-                style: .default
-            ))
-            present(controller, animated:true)
-        }
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    @IBAction func logoutButton(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            self.dismiss(animated: true)
+        } catch {
+            print("Sign out error")
+        }      }
 }

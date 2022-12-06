@@ -12,9 +12,7 @@ class AddRecItemViewController: UIViewController {
 
     @IBOutlet weak var itemLabel: UILabel!
     
-    @IBOutlet weak var priceInput: UITextField!
     
-    @IBOutlet weak var priceLabel: UILabel!
     
     @IBOutlet weak var quantityInput: UITextField!
     
@@ -29,8 +27,7 @@ class AddRecItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        priceLabel.isHidden = true
-        priceInput.isHidden = true
+        
         
         itemLabel.text = selectedItem
         

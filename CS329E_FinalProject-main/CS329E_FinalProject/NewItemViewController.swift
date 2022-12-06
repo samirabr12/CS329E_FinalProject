@@ -16,7 +16,7 @@ class NewItemViewController: UIViewController {
     
     @IBOutlet weak var itemInput: UITextField!
     
-    @IBOutlet weak var priceInput: UITextField!
+    
     
     @IBOutlet weak var quantityInput: UITextField!
     
@@ -30,13 +30,12 @@ class NewItemViewController: UIViewController {
     var quantityItem: Int?
     let systemSoundID: SystemSoundID = 1325
     
-    @IBOutlet weak var priceLabel: UILabel!
+    
     var delegate1:UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        priceLabel.isHidden = true
-        priceInput.isHidden = true
+        
         setColor()
         
     }
