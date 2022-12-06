@@ -14,6 +14,17 @@ class DatabaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setColor()
+        
+    }
+    
+    func setColor() {
+        if darkModeSetting {
+            overrideUserInterfaceStyle = .dark
+        }
+        else {
+            overrideUserInterfaceStyle = .light
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

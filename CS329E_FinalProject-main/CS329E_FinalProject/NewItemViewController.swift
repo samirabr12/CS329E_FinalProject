@@ -37,8 +37,23 @@ class NewItemViewController: UIViewController {
         super.viewDidLoad()
         priceLabel.isHidden = true
         priceInput.isHidden = true
+        setColor()
+        
     }
     
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(false)
+        setColor()
+    }
+    
+    func setColor() {
+        if darkModeSetting {
+            overrideUserInterfaceStyle = .dark
+        }
+        else {
+            overrideUserInterfaceStyle = .light
+        }
+    }
     @IBAction func addItemToList(_ sender: Any) {
         itemName = itemInput.text!
         priceItem = 0

@@ -9,6 +9,7 @@ import UIKit
 
 var soundSetting:Bool = true
 var notifSetting:Bool = false
+var darkModeSetting:Bool = false
 
 class SettingsViewController: UIViewController {
 
@@ -16,13 +17,36 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var soundSwitch: UISwitch!
     
-    var soundSwitchState: Bool!
-    var notifSwitchState: Bool!
+    @IBOutlet weak var darkModeSwitch: UISwitch!
+    
+    var soundSwitchState: Bool = true
+    var notifSwitchState: Bool = false
+    var darkModeSwitchState: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        notifSwitch.isOn = notifSwitchState
+        darkModeSwitch.isOn = darkModeSwitchState
+        soundSwitch.isOn = soundSwitchState
+        setColor()
         soundSwitch.isOn = UserDefaults.standard.bool(forKey: "soundSwitchState")
         notifSwitch.isOn = UserDefaults.standard.bool(forKey: "notifSwitchState")
+        darkModeSwitch.isOn = UserDefaults.standard.bool(forKey: "darkModeSwitchState")
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(false)
+        setColor()
+    }
+    
+    func setColor() {
+        if darkModeSetting {
+            overrideUserInterfaceStyle = .dark
+        }
+        else {
+            overrideUserInterfaceStyle = .light
+        }
     }
     
     @IBAction func notifSwitchChanged(_ sender: Any) {
@@ -41,10 +65,12 @@ class SettingsViewController: UIViewController {
                 UIApplication.shared.registerForRemoteNotifications()})
             print(UIApplication.shared.isRegisteredForRemoteNotifications)*/
             notifSetting = true
+            notifSwitchState = true
             //notifSwitch.isOn = true
         }
         else {
             notifSetting = false
+            notifSwitchState = false
             //notifSwitch.isOn = false
         }
         /*else {
@@ -66,12 +92,27 @@ class SettingsViewController: UIViewController {
         UserDefaults.standard.set(soundSwitch.isOn, forKey: "soundSwitchState" )
         if soundSwitch.isOn {
             soundSetting = true
+            soundSwitchState = true
             //soundSwitch.isOn = true
         }
         else {
             soundSetting = false
+            soundSwitchState = false
             //soundSwitch.isOn = false
         }
     }
     
+    @IBAction func darkModeSwitchChanged(_ sender: Any) {
+        UserDefaults.standard.set(darkModeSwitch.isOn, forKey: "darkModeSwitchState")
+        if darkModeSwitch.isOn {
+            darkModeSetting = true
+            darkModeSwitchState = true
+            overrideUserInterfaceStyle = .dark
+        }
+        else {
+            darkModeSetting = false
+            darkModeSwitchState = false
+            overrideUserInterfaceStyle = .light
+        }
+    }
 }

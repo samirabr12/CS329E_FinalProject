@@ -33,7 +33,21 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
-
+    
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(false)
+        setColor()
+    }
+    
+    func setColor() {
+        if darkModeSetting {
+            overrideUserInterfaceStyle = .dark
+        }
+        else {
+            overrideUserInterfaceStyle = .light
+        }
+    }
+    
 //if time, change func in tableCell to have keyboard input formatted to be region specific and not hard coded to 2 decimal points
 //when press calculate button, put up calculating alert and then display? depends on if we need animation
 //or use threads and have it update in the background. (worry about number overflow? this is a problem for the very end lol)

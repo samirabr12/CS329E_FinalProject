@@ -42,8 +42,23 @@ class LoginViewController: UIViewController {
         confirmPasswordLabel.isHidden = true
         confirmPasswordTextField.isHidden = true
         signInButton.setTitle("Sign In", for: .normal)
+        setColor()
     }
     
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(false)
+        setColor()
+    }
+    
+    func setColor() {
+        if darkModeSetting {
+            overrideUserInterfaceStyle = .dark
+        }
+        else {
+            overrideUserInterfaceStyle = .light
+        }
+    }
+
     @IBAction func changeSegmentedControl(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:

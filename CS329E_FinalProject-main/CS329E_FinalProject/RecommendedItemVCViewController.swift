@@ -14,10 +14,22 @@ class RecommendedItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setColor()
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(false)
+        setColor()
+    }
     
+    func setColor() {
+        if darkModeSetting {
+            overrideUserInterfaceStyle = .dark
+        }
+        else {
+            overrideUserInterfaceStyle = .light
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "recItemSegue",
            let nextVC = segue.destination as? AddRecItemViewController {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		213592C3292C63BA008DE145 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213592C2292C63BA008DE145 /* AddItemViewController.swift */; };
 		213592C5292C63EC008DE145 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213592C4292C63EC008DE145 /* NewItemViewController.swift */; };
 		213592C7292C6E67008DE145 /* ExistingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213592C6292C6E67008DE145 /* ExistingItemViewController.swift */; };
 		4019806F2914B2BE00B6914D /* CalculatorCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4019806E2914B2BE00B6914D /* CalculatorCellTableViewCell.swift */; };
@@ -15,7 +14,6 @@
 		40749E6B29360E8C00CDA5C0 /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40749E6A29360E8C00CDA5C0 /* DatabaseViewController.swift */; };
 		672F20212936EB3A00034CB3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672F20202936EB3A00034CB3 /* HomeViewController.swift */; };
 		672F20232936ECA300034CB3 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672F20222936ECA300034CB3 /* ItemTableViewCell.swift */; };
-		672F9EA3293EA11F00ABA8C7 /* startProfilePic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 672F9EA2293EA11E00ABA8C7 /* startProfilePic.jpeg */; };
 		678E57742909C5580088A917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57732909C5580088A917 /* AppDelegate.swift */; };
 		678E57762909C5580088A917 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57752909C5580088A917 /* SceneDelegate.swift */; };
 		678E57782909C5580088A917 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57772909C5580088A917 /* ViewController.swift */; };
@@ -27,7 +25,6 @@
 		678E57982909C55B0088A917 /* CS329E_FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57972909C55B0088A917 /* CS329E_FinalProjectUITests.swift */; };
 		678E579A2909C55B0088A917 /* CS329E_FinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57992909C55B0088A917 /* CS329E_FinalProjectUITestsLaunchTests.swift */; };
 		761F00812937A7190064FA43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 761F00802937A7190064FA43 /* GoogleService-Info.plist */; };
-		7680C4522935C70F0037366C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7680C4512935C70F0037366C /* CalendarViewController.swift */; };
 		7699C865293705C30054A6B1 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C864293705C30054A6B1 /* GroceryItem.swift */; };
 		7699C86729371A220054A6B1 /* RecommendedItemVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C86629371A220054A6B1 /* RecommendedItemVCViewController.swift */; };
 		7699C8692937289C0054A6B1 /* AddRecItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C8682937289C0054A6B1 /* AddRecItemViewController.swift */; };
@@ -55,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		213592C2292C63BA008DE145 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		213592C4292C63EC008DE145 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		213592C6292C6E67008DE145 /* ExistingItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingItemViewController.swift; sourceTree = "<group>"; };
 		4019806E2914B2BE00B6914D /* CalculatorCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -63,7 +59,6 @@
 		40749E6A29360E8C00CDA5C0 /* DatabaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseViewController.swift; sourceTree = "<group>"; };
 		672F20202936EB3A00034CB3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		672F20222936ECA300034CB3 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
-		672F9EA2293EA11E00ABA8C7 /* startProfilePic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = startProfilePic.jpeg; path = ../../../testproject/testproject/startProfilePic.jpeg; sourceTree = "<group>"; };
 		678E57702909C5580088A917 /* CS329E_FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CS329E_FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		678E57732909C5580088A917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		678E57752909C5580088A917 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +74,6 @@
 		678E57972909C55B0088A917 /* CS329E_FinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS329E_FinalProjectUITests.swift; sourceTree = "<group>"; };
 		678E57992909C55B0088A917 /* CS329E_FinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS329E_FinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		761F00802937A7190064FA43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		7680C4512935C70F0037366C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		7699C864293705C30054A6B1 /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
 		7699C86629371A220054A6B1 /* RecommendedItemVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedItemVCViewController.swift; sourceTree = "<group>"; };
 		7699C8682937289C0054A6B1 /* AddRecItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecItemViewController.swift; sourceTree = "<group>"; };
@@ -150,12 +144,9 @@
 				7699C864293705C30054A6B1 /* GroceryItem.swift */,
 				672F20222936ECA300034CB3 /* ItemTableViewCell.swift */,
 				40749E6A29360E8C00CDA5C0 /* DatabaseViewController.swift */,
-				7680C4512935C70F0037366C /* CalendarViewController.swift */,
-				213592C2292C63BA008DE145 /* AddItemViewController.swift */,
 				213592C4292C63EC008DE145 /* NewItemViewController.swift */,
 				76AA6D552924717600DFD82F /* SettingsViewController.swift */,
 				76AA6D532924704500DFD82F /* ProfileViewController.swift */,
-				672F9EA2293EA11E00ABA8C7 /* startProfilePic.jpeg */,
 				4019806E2914B2BE00B6914D /* CalculatorCellTableViewCell.swift */,
 				4066E17B29138D8400169850 /* CalculatorViewController.swift */,
 				678E577F2909C55A0088A917 /* Assets.xcassets */,
@@ -297,7 +288,6 @@
 				761F00812937A7190064FA43 /* GoogleService-Info.plist in Resources */,
 				678E57802909C55A0088A917 /* Assets.xcassets in Resources */,
 				678E577B2909C5580088A917 /* Main.storyboard in Resources */,
-				672F9EA3293EA11F00ABA8C7 /* startProfilePic.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,8 +322,6 @@
 				7699C865293705C30054A6B1 /* GroceryItem.swift in Sources */,
 				76AA6D562924717600DFD82F /* SettingsViewController.swift in Sources */,
 				678E577E2909C5580088A917 /* CS329E_FinalProject.xcdatamodeld in Sources */,
-				213592C3292C63BA008DE145 /* AddItemViewController.swift in Sources */,
-				7680C4522935C70F0037366C /* CalendarViewController.swift in Sources */,
 				4019806F2914B2BE00B6914D /* CalculatorCellTableViewCell.swift in Sources */,
 				7699C8692937289C0054A6B1 /* AddRecItemViewController.swift in Sources */,
 				76AA6D542924704500DFD82F /* ProfileViewController.swift in Sources */,

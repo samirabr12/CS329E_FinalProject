@@ -33,6 +33,23 @@ class AddRecItemViewController: UIViewController {
         priceInput.isHidden = true
         
         itemLabel.text = selectedItem
+        
+        setColor()
+        
+    }
+    
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(false)
+        setColor()
+    }
+    
+    func setColor() {
+        if darkModeSetting {
+            overrideUserInterfaceStyle = .dark
+        }
+        else {
+            overrideUserInterfaceStyle = .light
+        }
     }
     
     @IBAction func saveItemButton(_ sender: Any) {

@@ -13,6 +13,7 @@ let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
 
 var groceryList: [GroceryItem] = []
+var coreDataList: [NSManagedObject] = []
 
 protocol AddItemToList {
     func addItem(addedItem: GroceryItem)
@@ -31,7 +32,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //core data
         coreData()
+        setColor()
+        //self.view.backgroundColor = UIColor.black
+        
     }
+    
+    override func viewDidAppear(_ animated:Bool) {
+        super.viewDidAppear(false)
+        setColor()
+    }
+    
+    func setColor() {
+        if darkModeSetting {
+            overrideUserInterfaceStyle = .dark
+        }
+        else {
+            overrideUserInterfaceStyle = .light
+        }
+    }
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groceryList.count
@@ -74,6 +93,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     
+    
     @IBAction func logout(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -87,13 +107,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let fetchedResult = retrieveList()
 
         for element in fetchedResult {
-            let newItem = GroceryItem()
-            newItem.newItem = (element.value(forKey: "itemName") as? String)!
-            newItem.quantity = (element.value(forKey: "quantityInput") as? Int)!
-            newItem.price = element.value(forKey: "priceInput") as? Float
-            newItem.itemID = element.objectID
-            groceryList.append(newItem)
-        }
+            if coreDataList.contains(element) == false {
+                coreDataList.append(element)
+                let newItem = GroceryItem()
+                newItem.newItem = (element.value(forKey: "itemName") as? String)!
+                newItem.quantity = (element.value(forKey: "quantityInput") as? Int)!
+                newItem.price = element.value(forKey: "priceInput") as? Float
+                newItem.itemID = element.objectID
+                
+                groceryList.append(newItem)
+            }}
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -131,7 +154,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         storedItem.setValue(addedItem.newItem, forKey: "itemName")
         storedItem.setValue(addedItem.price, forKey: "priceInput")
         storedItem.setValue(addedItem.quantity, forKey: "quantityInput")
-        
+        coreDataList.append(storedItem)
         saveContext()
     }
     
