@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bfU-cI-4p4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -209,7 +210,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Add Item" image="plus" catalog="system" id="bKE-Hx-Pnm">
                             <color key="tintColor" red="0.185596974" green="0.72320465369999998" blue="0.31999889390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="addItemButton:" destination="SRM-Bx-U9a" id="gW3-Vl-Vda"/>
                                 <segue destination="1TP-V4-fmQ" kind="show" identifier="addItemSegue" id="cPG-QW-1eL"/>
                             </connections>
                         </barButtonItem>

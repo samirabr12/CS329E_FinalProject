@@ -16,7 +16,6 @@
 		672F20232936ECA300034CB3 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672F20222936ECA300034CB3 /* ItemTableViewCell.swift */; };
 		678E57742909C5580088A917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57732909C5580088A917 /* AppDelegate.swift */; };
 		678E57762909C5580088A917 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57752909C5580088A917 /* SceneDelegate.swift */; };
-		678E57782909C5580088A917 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E57772909C5580088A917 /* ViewController.swift */; };
 		678E577B2909C5580088A917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678E57792909C5580088A917 /* Main.storyboard */; };
 		678E577E2909C5580088A917 /* CS329E_FinalProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 678E577C2909C5580088A917 /* CS329E_FinalProject.xcdatamodeld */; };
 		678E57802909C55A0088A917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 678E577F2909C55A0088A917 /* Assets.xcassets */; };
@@ -63,7 +62,6 @@
 		678E57702909C5580088A917 /* CS329E_FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CS329E_FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		678E57732909C5580088A917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		678E57752909C5580088A917 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		678E57772909C5580088A917 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		678E577A2909C5580088A917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		678E577D2909C5580088A917 /* CS329E_FinalProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CS329E_FinalProject.xcdatamodel; sourceTree = "<group>"; };
 		678E577F2909C55A0088A917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				761F00802937A7190064FA43 /* GoogleService-Info.plist */,
 				678E57732909C5580088A917 /* AppDelegate.swift */,
 				678E57752909C5580088A917 /* SceneDelegate.swift */,
-				678E57772909C5580088A917 /* ViewController.swift */,
 				678E57792909C5580088A917 /* Main.storyboard */,
 				67E14FE3293EC8A5008F39DF /* StartPageViewController.swift */,
 				7699C86F293750BC0054A6B1 /* LoginViewController.swift */,
@@ -316,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				672F20232936ECA300034CB3 /* ItemTableViewCell.swift in Sources */,
-				678E57782909C5580088A917 /* ViewController.swift in Sources */,
 				672F20212936EB3A00034CB3 /* HomeViewController.swift in Sources */,
 				678E57742909C5580088A917 /* AppDelegate.swift in Sources */,
 				67E14FE4293EC8A5008F39DF /* StartPageViewController.swift in Sources */,

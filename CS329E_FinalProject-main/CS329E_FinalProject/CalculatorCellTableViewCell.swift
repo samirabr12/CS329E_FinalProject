@@ -17,8 +17,6 @@ class CalculatorCellTableViewCell: UITableViewCell, UITextFieldDelegate {
         super.awakeFromNib()
         nameField.delegate = self
         priceField.delegate = self
-        //setColor()
-        
     }
     func setColor() {
         if darkModeSetting {
@@ -28,13 +26,13 @@ class CalculatorCellTableViewCell: UITableViewCell, UITextFieldDelegate {
             overrideUserInterfaceStyle = .light
         }
     }
+    
     //formats keyboard input so only 2 decimal places
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
         if textField == self.priceField {
             guard let inputText = textField.text, let rangeDecimal = Range(range, in: inputText) else {
                 return true
             }
-
             let tempText = inputText.replacingCharacters(in: rangeDecimal, with: string)
             let numCheck = tempText.isEmpty || (Double(tempText) != nil)
             let deciCount = tempText.components(separatedBy: ".").count - 1
@@ -46,7 +44,6 @@ class CalculatorCellTableViewCell: UITableViewCell, UITextFieldDelegate {
             else {
                 digitCount = 0
             }
-
             return (numCheck) && (deciCount <= 1) && (digitCount <= 2)
         }
         return true

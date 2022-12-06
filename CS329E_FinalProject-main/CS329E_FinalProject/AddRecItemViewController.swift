@@ -12,8 +12,6 @@ class AddRecItemViewController: UIViewController {
 
     @IBOutlet weak var itemLabel: UILabel!
     
-    
-    
     @IBOutlet weak var quantityInput: UITextField!
     
     var selectedItem: String?
@@ -26,13 +24,9 @@ class AddRecItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         itemLabel.text = selectedItem
-        
         setColor()
-        
     }
     
     override func viewDidAppear(_ animated:Bool) {
@@ -50,8 +44,8 @@ class AddRecItemViewController: UIViewController {
     }
     
     @IBAction func saveItemButton(_ sender: Any) {
-        var itemName = selectedItem
-        var quantityItem = Int(quantityInput.text!)
+        let itemName = selectedItem
+        let quantityItem = Int(quantityInput.text!)
         
         if quantityItem == nil {
             let controller = UIAlertController(
@@ -64,9 +58,6 @@ class AddRecItemViewController: UIViewController {
             ))
             present(controller, animated:true)
         }
-        
-        //add item to list
-
         else{
             if soundSetting {AudioServicesPlaySystemSound(systemSoundID)}
                 let controller = UIAlertController(
@@ -103,19 +94,4 @@ class AddRecItemViewController: UIViewController {
                 UNUserNotificationCenter.current().add(request)                     }
         }
         }
-
-        
-        
-            }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
+}

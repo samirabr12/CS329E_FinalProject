@@ -13,10 +13,8 @@ class StartPageViewController: UIViewController {
         super.viewDidLoad()
         logoImage.image = UIImage(named: "groceriesforu-logo")
         spinLogo()
-        // Do any additional setup after loading the view.
     }
-    
-    
+        
     func spinLogo(){
         self.logoImage.center.x = self.view.center.x + self.view.bounds.width
         

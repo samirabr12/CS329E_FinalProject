@@ -14,12 +14,6 @@ public class GroceryItem: NSManagedObject {
     var quantity: Int = 0
     var itemID:NSManagedObjectID?
 
-    /*init(item: String, itemPrice: Float, itemQuantity: Int) {
-        newItem = item
-        price = itemPrice
-        quantity = itemQuantity
-    }*/
-    
     func showList () -> String {
         return "\(String(describing: self.newItem))"
     }

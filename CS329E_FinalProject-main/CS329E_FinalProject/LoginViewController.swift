@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
         statusLabel.lineBreakMode = .byWordWrapping
         statusLabel.numberOfLines = 8
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
         Auth.auth().addStateDidChangeListener() {
           auth, user in
@@ -39,6 +40,7 @@ class LoginViewController: UIViewController {
                 self.passwordTextField.text = nil
               }
             }
+        
         confirmPasswordLabel.isHidden = true
         confirmPasswordTextField.isHidden = true
         signInButton.setTitle("Sign In", for: .normal)
@@ -109,5 +111,4 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
 }

@@ -48,10 +48,6 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
-//if time, change func in tableCell to have keyboard input formatted to be region specific and not hard coded to 2 decimal points
-//when press calculate button, put up calculating alert and then display? depends on if we need animation
-//or use threads and have it update in the background. (worry about number overflow? this is a problem for the very end lol)
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "calcToDataSegue" {
             let itemVC = segue.destination as! DatabaseViewController
@@ -65,7 +61,7 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
         priceStorage.append(contentsOf: existPriceArray)
 
         calcTable.beginUpdates()
-        calcTable.insertRows(at: [IndexPath(row: priceStorage.count-1, section: 0)], with: .automatic) //do i need to do this multiple times for each item?
+        calcTable.insertRows(at: [IndexPath(row: priceStorage.count-1, section: 0)], with: .automatic)
         calcTable.endUpdates()
     }
     
@@ -143,10 +139,8 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
             if let formattedNumber = formatter.number(from: cell.priceField.text!) as? Decimal {
                 tempDecimal = formattedNumber
             }
-            
             priceStorage[row] = tempDecimal
         }
-        //let priceString: NSString = cell.priceField.text! as NSString //search this up
     }
     
     //allows user to add rows as they please
@@ -192,6 +186,5 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
         }))
         resetAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(resetAlert, animated: true)
-        
     }
 }

@@ -15,15 +15,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var namePrinted: UILabel!
     
-//    @IBOutlet weak var changeEmailButton: UIButton!
-//
-//    @IBOutlet weak var changePasswordButton: UIButton!
-    
     @IBOutlet weak var profilePicture: UIImageView!
     
     @IBOutlet weak var addLibrary: UIButton!
-    
-//    @IBOutlet weak var addCamera: UIButton!
     
     let picker = UIImagePickerController()
     var username: String = ""
@@ -44,8 +38,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         profilePicture.layer.cornerRadius = profilePicture.frame.height/2
         profilePicture.clipsToBounds = true
         setColor()
-        //namePrinted.text = "New User"
-        // Do any additional setup after loading the view.
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     override func viewDidAppear(_ animated:Bool) {
@@ -61,11 +54,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             overrideUserInterfaceStyle = .light
         }
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         selectedPicture = info[.originalImage] as! UIImage
         profilePicture.image = selectedPicture
-//        items.append(chosenImage)
-//        collectionView.reloadData()
         dismiss(animated: true)
     }
     
@@ -91,7 +83,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             title: "Choose from Library",
             style: .default,
             handler: {_ in
-//                (action) in print("Accept data")
                 self.picker.allowsEditing = false
                 self.picker.sourceType = .photoLibrary
                 self.present(self.picker, animated: true)
@@ -106,7 +97,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     // use the rear camera
                     switch AVCaptureDevice.authorizationStatus(for: .video) {
                     case .notDetermined:
-                        // we don't know
                         AVCaptureDevice.requestAccess(for: .video) {
                             accessGranted in
                             guard accessGranted == true else { return }
@@ -125,10 +115,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     self.picker.sourceType = .camera
                     self.picker.cameraCaptureMode = .photo
                     self.present(self.picker, animated: true)
-                    
                 } else {
                     // no rear camera is available
-                    
                     let alertVC = UIAlertController(
                         title: "No camera",
                         message: "Sorry, this device has no rear camera",
@@ -139,75 +127,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     alertVC.addAction(okAction)
                     self.present(alertVC,animated:true)
                 }
-
-//                (action) in print("Accept data")
             })
         controller.addAction(cameraAction)
-        
-//        let destroyAction = UIAlertAction(
-//            title: "Delete",
-//            style: .destructive,
-//            handler: {
-//                (action) in print("Destroy data")
-//            })
-//        controller.addAction(destroyAction)
-        
         present(controller, animated: true)
     }
-    
-//    @IBAction func librarySelected(_ sender: Any) {
-//        picker.allowsEditing = false
-//        picker.sourceType = .photoLibrary
-//        present(picker, animated: true)
-//    }
-//
-//    @IBAction func cameraSelected(_ sender: Any) {
-//        if UIImagePickerController.availableCaptureModes(for: .rear) != nil {
-//            // use the rear camera
-//            switch AVCaptureDevice.authorizationStatus(for: .video) {
-//            case .notDetermined:
-//                // we don't know
-//                AVCaptureDevice.requestAccess(for: .video) {
-//                    accessGranted in
-//                    guard accessGranted == true else { return }
-//                }
-//            case .authorized:
-//                // we have permission already
-//                break
-//            default:
-//                // we know we don't have access
-//                print("Access denied")
-//                return
-//            }
-//
-//        //picker.delegate = self
-//        picker.allowsEditing = false
-//        picker.sourceType = .camera
-//        picker.cameraCaptureMode = .photo
-//        present(picker, animated: true)
-//
-//        } else {
-//            // no rear camera is available
-//
-//            let alertVC = UIAlertController(
-//                title: "No camera",
-//                message: "Sorry, this device has no rear camera",
-//                preferredStyle: .alert)
-//            let okAction = UIAlertAction(
-//                title: "OK",
-//                style: .default)
-//            alertVC.addAction(okAction)
-//            present(alertVC,animated:true)
-//        }
-//
-//    }
-//
     
     func CameraPickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         selectedPicture = info[.originalImage] as! UIImage
         profilePicture.image = selectedPicture
-//        items.append(selectedPicture)
-//        collectionView.reloadData()
         dismiss(animated: true)
     }
 
@@ -235,12 +162,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 if let textFieldArray = controller.textFields {
                     let textFields = textFieldArray as [UITextField]
                     self.newUsername = textFields[0].text!
-//                    print(enteredText!)
                 }
             }))
         present(controller, animated: true)
         
-        //if username != newUsername {
         if self.newUsername.isEmpty {
             let newController = UIAlertController(
                 title: "Error",
@@ -274,117 +199,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             style: .default
         ))
         present(newController, animated:true)
-        //namePrinted.text = "NewUser"
-            //viewDidLoad()
-        //}
     }
-    
-//
-//    @IBAction func changeEmail(_ sender: Any) {
-//
-//        let controller = UIAlertController(
-//            title: "Profile Email",
-//            message: "Change email",
-//            preferredStyle: .alert)
-//        controller.addAction(UIAlertAction(
-//            title: "Cancel",
-//            style: .cancel))
-//        controller.addTextField(configurationHandler: {
-//            (textField:UITextField!) in
-//            textField.placeholder = "Enter new email"
-//        })
-//        controller.addAction(UIAlertAction(
-//            title: "OK",
-//            style: .default,
-//            handler: {
-//                (paramAction:UIAlertAction!) in
-//                if let textFieldArray = controller.textFields {
-//                    let textFields = textFieldArray as [UITextField]
-//                    self.newEmail = textFields[0].text!
-//                }
-//            }))
-//        present(controller, animated: true)
-//
-//        if self.email != self.newEmail {
-//            self.email = self.newEmail
-//            let controller = UIAlertController(
-//                title: "Success!",
-//                message: "Email changed",
-//                preferredStyle: .alert)
-//            controller.addAction(UIAlertAction(
-//                title: "OK",
-//                style: .default
-//            ))
-//            present(controller, animated:true)
-//        } else if self.newEmail.contains("@") == false {
-//            let controller = UIAlertController(
-//                title: "Error",
-//                message: "Email must be valid",
-//                preferredStyle: .alert)
-//            controller.addAction(UIAlertAction(
-//                title: "OK",
-//                style: .default
-//            ))
-//            present(controller, animated:true)
-//        }
-//    }
-//
-//
-//    @IBAction func changePassword(_ sender: Any) {
-//        let controller = UIAlertController(
-//            title: "Profile Password",
-//            message: "Change password",
-//            preferredStyle: .alert)
-//        controller.addAction(UIAlertAction(
-//            title: "Cancel",
-//            style: .cancel))
-//        controller.addTextField(configurationHandler: {
-//            (textField:UITextField!) in
-//            textField.placeholder = "Enter new password"
-//        })
-//        controller.addAction(UIAlertAction(
-//            title: "OK",
-//            style: .default,
-//            handler: {
-//                (paramAction:UIAlertAction!) in
-//                if let textFieldArray = controller.textFields {
-//                    let textFields = textFieldArray as [UITextField]
-//                    self.newPassword = textFields[0].text!
-//                }
-//            }))
-//        present(controller, animated: true)
-//
-//        if password != newPassword {
-//            self.password = self.newPassword
-//            let controller = UIAlertController(
-//                title: "Success!",
-//                message: "Password changed",
-//                preferredStyle: .alert)
-//            controller.addAction(UIAlertAction(
-//                title: "OK",
-//                style: .default
-//            ))
-//            present(controller, animated:true)
-//        } else {
-//            let controller = UIAlertController(
-//                title: "Error",
-//                message: "New password can not be the same as previous password",
-//                preferredStyle: .alert)
-//            controller.addAction(UIAlertAction(
-//                title: "OK",
-//                style: .default
-//            ))
-//            present(controller, animated:true)
-//        }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }*/
     
     @IBAction func logoutButton(_ sender: Any) {
         do {

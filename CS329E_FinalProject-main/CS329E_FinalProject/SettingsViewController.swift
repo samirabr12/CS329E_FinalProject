@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
         soundSwitch.isOn = UserDefaults.standard.bool(forKey: "soundSwitchState")
         notifSwitch.isOn = UserDefaults.standard.bool(forKey: "notifSwitchState")
         darkModeSwitch.isOn = UserDefaults.standard.bool(forKey: "darkModeSwitchState")
-        // Do any additional setup after loading the view.
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     override func viewDidAppear(_ animated:Bool) {
@@ -61,31 +61,13 @@ class SettingsViewController: UIViewController {
                     print(error.localizedDescription)
                 }
             }
-            /*DispatchQueue.main.async(execute: {
-                UIApplication.shared.registerForRemoteNotifications()})
-            print(UIApplication.shared.isRegisteredForRemoteNotifications)*/
             notifSetting = true
             notifSwitchState = true
-            //notifSwitch.isOn = true
         }
         else {
             notifSetting = false
             notifSwitchState = false
-            //notifSwitch.isOn = false
         }
-        /*else {
-            UIApplication.shared.unregisterForRemoteNotifications()
-            let controller = UIAlertController(
-                title: "Notifications",
-                message: "Notifications have been disabled",
-                preferredStyle: .alert)
-            controller.addAction(UIAlertAction(
-                title: "OK",
-                style: .default))
-            present(controller, animated: true)
-            
-            print(UIApplication.shared.isRegisteredForRemoteNotifications)
-        }*/
     }
     
     @IBAction func soundSettingChanged(_ sender: Any) {
@@ -93,12 +75,10 @@ class SettingsViewController: UIViewController {
         if soundSwitch.isOn {
             soundSetting = true
             soundSwitchState = true
-            //soundSwitch.isOn = true
         }
         else {
             soundSetting = false
             soundSwitchState = false
-            //soundSwitch.isOn = false
         }
     }
     

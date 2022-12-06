@@ -15,7 +15,7 @@ class DatabaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setColor()
-        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     func setColor() {
@@ -34,4 +34,3 @@ class DatabaseViewController: UIViewController {
         }
     }
 }
-    

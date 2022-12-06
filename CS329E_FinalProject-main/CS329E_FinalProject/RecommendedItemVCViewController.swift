@@ -15,8 +15,9 @@ class RecommendedItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setColor()
-        // Do any additional setup after loading the view.
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
+    
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(false)
         setColor()
@@ -30,6 +31,7 @@ class RecommendedItemViewController: UIViewController {
             overrideUserInterfaceStyle = .light
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "recItemSegue",
            let nextVC = segue.destination as? AddRecItemViewController {
@@ -38,5 +40,4 @@ class RecommendedItemViewController: UIViewController {
             nextVC.previousVC = previousVC
         }
     }
-    
 }
