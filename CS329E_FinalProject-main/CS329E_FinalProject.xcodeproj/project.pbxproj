@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		213592C5292C63EC008DE145 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213592C4292C63EC008DE145 /* NewItemViewController.swift */; };
 		213592C7292C6E67008DE145 /* ExistingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213592C6292C6E67008DE145 /* ExistingItemViewController.swift */; };
+		21A5D208293EFB2E00253670 /* DatabaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D207293EFB2E00253670 /* DatabaseTableViewCell.swift */; };
 		4019806F2914B2BE00B6914D /* CalculatorCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4019806E2914B2BE00B6914D /* CalculatorCellTableViewCell.swift */; };
 		4066E17C29138D8400169850 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4066E17B29138D8400169850 /* CalculatorViewController.swift */; };
 		40749E6B29360E8C00CDA5C0 /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40749E6A29360E8C00CDA5C0 /* DatabaseViewController.swift */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		213592C4292C63EC008DE145 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		213592C6292C6E67008DE145 /* ExistingItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingItemViewController.swift; sourceTree = "<group>"; };
+		21A5D207293EFB2E00253670 /* DatabaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTableViewCell.swift; sourceTree = "<group>"; };
 		4019806E2914B2BE00B6914D /* CalculatorCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCellTableViewCell.swift; sourceTree = "<group>"; };
 		4066E17B29138D8400169850 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		40749E6A29360E8C00CDA5C0 /* DatabaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				678E57732909C5580088A917 /* AppDelegate.swift */,
 				678E57752909C5580088A917 /* SceneDelegate.swift */,
 				678E57792909C5580088A917 /* Main.storyboard */,
+				21A5D207293EFB2E00253670 /* DatabaseTableViewCell.swift */,
 				67E14FE3293EC8A5008F39DF /* StartPageViewController.swift */,
 				7699C86F293750BC0054A6B1 /* LoginViewController.swift */,
 				7699C8682937289C0054A6B1 /* AddRecItemViewController.swift */,
@@ -329,6 +332,7 @@
 				4019806F2914B2BE00B6914D /* CalculatorCellTableViewCell.swift in Sources */,
 				7699C8692937289C0054A6B1 /* AddRecItemViewController.swift in Sources */,
 				76AA6D542924704500DFD82F /* ProfileViewController.swift in Sources */,
+				21A5D208293EFB2E00253670 /* DatabaseTableViewCell.swift in Sources */,
 				40749E6B29360E8C00CDA5C0 /* DatabaseViewController.swift in Sources */,
 				7699C86729371A220054A6B1 /* RecommendedItemVCViewController.swift in Sources */,
 				678E57762909C5580088A917 /* SceneDelegate.swift in Sources */,
