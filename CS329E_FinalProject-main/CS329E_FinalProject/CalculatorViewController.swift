@@ -11,7 +11,7 @@ protocol addExistItems {
     func nameEditInVC(name: String?, passedIndex: IndexPath)
     func priceEditInVC(price: String?, passedIndex: IndexPath)
     func keyboardTap()
-    func addItems(existNameArray: [String], existPriceArray: [Decimal])
+    func addItems(existNameArray: [String], existPriceArray: [Float])
 }
 
 class CalculatorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, addExistItems {
@@ -20,7 +20,7 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var calcTable: UITableView!
     
     var nameStorage: [String?] = []
-    var priceStorage: [Decimal?] = []
+    var priceStorage: [Float?] = []
     let cellIdentifier = "tableCell"
     
     override func viewDidLoad() {
@@ -56,7 +56,7 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     //called when items are added from the database of existing items
-    func addItems(existNameArray: [String], existPriceArray: [Decimal]) {
+    func addItems(existNameArray: [String], existPriceArray: [Float]) {
         nameStorage.append(contentsOf: existNameArray)
         priceStorage.append(contentsOf: existPriceArray)
 
@@ -127,7 +127,7 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
     func priceEditInVC(price: String?, passedIndex: IndexPath) {
         let row = passedIndex.row
         let cell = calcTable.cellForRow(at: passedIndex) as! CalculatorCellTableViewCell
-        var tempDecimal: Decimal!
+        var tempDecimal: Float!
         
         if price == nil {
             priceStorage[row] = nil
@@ -136,7 +136,7 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
             let formatter = NumberFormatter()
             formatter.generatesDecimalNumbers = true
             formatter.numberStyle = NumberFormatter.Style.decimal
-            if let formattedNumber = formatter.number(from: cell.priceField.text!) as? Decimal {
+            if let formattedNumber = formatter.number(from: cell.priceField.text!) as? Float {
                 tempDecimal = formattedNumber
             }
             priceStorage[row] = tempDecimal
@@ -162,7 +162,7 @@ class CalculatorViewController: UIViewController, UITableViewDataSource, UITable
         }
         else {
             //calculate and display results
-            var result: Decimal = 0
+            var result: Float = 0
             for price in priceStorage {
                 result = result + price!
             }

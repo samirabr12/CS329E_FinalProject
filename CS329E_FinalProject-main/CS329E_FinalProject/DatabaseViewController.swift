@@ -15,10 +15,10 @@ protocol addSelectedItems{
 class DatabaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, addSelectedItems {
     
     var nameArray: [String] = []
-    var priceArray: [Decimal] = []
+    var priceArray: [Float] = []
     var cellIdentifier = "dataCell"
     var nameSource: [String] = []
-    var priceSource: [Decimal] = []
+    var priceSource: [Float] = []
     //var unitSource: [String] = []
     var delegate: UIViewController!
     
@@ -34,7 +34,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
         let itemSource = self.retrieveItems()
         for item in itemSource {
             self.nameSource.append(item.value(forKey: "itemName") as! String)
-            self.priceSource.append(item.value(forKey: "priceInput") as! Decimal)
+            self.priceSource.append(item.value(forKey: "priceInput") as! Float)
         }
        /*
         let queue = DispatchQueue(label: "loadQueue", qos: .background)
