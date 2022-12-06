@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var darkModeSwitch: UISwitch!
     
     var soundSwitchState: Bool = true
-    var notifSwitchState: Bool = true
+    var notifSwitchState: Bool = false
     var darkModeSwitchState: Bool = false
     
     override func viewDidLoad() {
