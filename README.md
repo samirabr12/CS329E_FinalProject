@@ -18,7 +18,7 @@ Dependencies: **Xcode version 14.0.1, Swift version 5, Firebase version 9.0.0**
     Password: 123456
 
 
-**Required Feature Checklist: **
+**Required Feature Checklist:**
 
 
 
@@ -46,7 +46,7 @@ Minor Elements used:
 3. Alerts, Scroll Views, and User defaults- alerts the user when an item is successfully added to the grocery list and a scroll view is used to display the quick add items to the grocery list. User defaults are used in the settings page to save switch state even when switching between VCs. 
 4. Frameworks Implemented: Local notifications (the user can turn on local notifications for when an item is added to the grocery list), Gesture Recognition (when the software keyboard is open on the screen, user can tap to close it), Animation (the logo on the get started page slides in from the right), Core Audio (when the setting is turned on, adding an item to the grocery list creates a sound)
 
-**Work Distribution Table **
+**Work Distribution Table**
 
 
 <table>
