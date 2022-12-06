@@ -777,43 +777,72 @@
                                     <action selector="changeSegmentedControl:" destination="8hC-ED-Wl1" eventType="valueChanged" id="wMz-06-MF7"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmz-dQ-n0M">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmz-dQ-n0M">
                                 <rect key="frame" x="25" y="192" width="100" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJo-K2-vay">
-                                <rect key="frame" x="25" y="203" width="95" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJo-K2-vay">
+                                <rect key="frame" x="25" y="203" width="73.5" height="120"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ks-GX-zPu">
-                                <rect key="frame" x="184" y="196" width="210" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXc-jm-Jij">
+                                <rect key="frame" x="25" y="284" width="160" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Us-qp-3FW">
+                                <rect key="frame" x="184" y="246" width="210" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="TYm-IA-Cug"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXc-jm-Jij">
-                                <rect key="frame" x="25" y="284" width="160" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NP5-T3-yl4">
+                                <rect key="frame" x="184" y="292" width="210" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="1PA-W5-t0X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ks-GX-zPu">
+                                <rect key="frame" x="184" y="196" width="210" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="v2d-fI-xfj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Udm-gR-UBu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3ks-GX-zPu" firstAttribute="centerY" secondItem="Cmz-dQ-n0M" secondAttribute="centerY" id="67i-sO-njb"/>
+                            <constraint firstItem="3ks-GX-zPu" firstAttribute="width" secondItem="1Us-qp-3FW" secondAttribute="width" id="BhG-ga-3AX"/>
+                            <constraint firstItem="1Us-qp-3FW" firstAttribute="width" secondItem="NP5-T3-yl4" secondAttribute="width" id="CJl-JO-KvX"/>
+                            <constraint firstItem="NP5-T3-yl4" firstAttribute="centerX" secondItem="1Us-qp-3FW" secondAttribute="centerX" id="iVZ-Gg-hY0"/>
+                            <constraint firstItem="Udm-gR-UBu" firstAttribute="trailing" secondItem="3ks-GX-zPu" secondAttribute="trailing" constant="20" id="llB-WI-lHy"/>
+                            <constraint firstItem="nJo-K2-vay" firstAttribute="leading" secondItem="Udm-gR-UBu" secondAttribute="leading" constant="25" id="mFc-v7-jcz"/>
+                            <constraint firstItem="3ks-GX-zPu" firstAttribute="centerX" secondItem="1Us-qp-3FW" secondAttribute="centerX" id="p4j-el-HGA"/>
+                            <constraint firstItem="1Us-qp-3FW" firstAttribute="centerY" secondItem="nJo-K2-vay" secondAttribute="centerY" id="tkF-nS-cPo"/>
+                            <constraint firstItem="NP5-T3-yl4" firstAttribute="centerY" secondItem="NXc-jm-Jij" secondAttribute="centerY" id="vxZ-BQ-rd4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kVz-eX-Uzl"/>
                     <connections>
                         <outlet property="confirmPasswordLabel" destination="NXc-jm-Jij" id="WPE-Ib-UGX"/>
+                        <outlet property="confirmPasswordTextField" destination="NP5-T3-yl4" id="GJT-1f-6to"/>
+                        <outlet property="passwordTextField" destination="1Us-qp-3FW" id="MjO-Ds-4Xh"/>
                         <outlet property="segmentedControl" destination="Nbn-oo-l1H" id="6GD-DW-lB6"/>
                         <outlet property="signInButton" destination="maG-7X-AYQ" id="2ZK-Ky-fOq"/>
                         <outlet property="statusLabel" destination="6iy-Ig-hLN" id="5LW-qo-yP9"/>
+                        <outlet property="userIDTextField" destination="3ks-GX-zPu" id="mjd-GT-Ss3"/>
                         <segue destination="anE-ld-OaJ" kind="show" identifier="afterLoginSegue" id="7Wj-K3-WKZ"/>
                     </connections>
                 </viewController>
@@ -823,7 +852,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DOq-ac-Azv"/>
         <segue reference="FzQ-zK-p2H"/>
         <segue reference="788-Vj-jDF"/>
     </inferredMetricsTieBreakers>
