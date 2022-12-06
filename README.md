@@ -1,12 +1,10 @@
+Name of Project: **GroceriesForU**
 
+Team Members: **Emily Wang, Jennifer Lin, Samira Ravilisetty, Shreya Kumaran**
 
-**Name of Project: **GroceriesForU**
+Dependencies: **Xcode version 14.0.1, Swift version 5, Firebase version 9.0.0**
 
-**Team Members: **Emily Wang, Jennifer Lin, Samira Ravilisetty, Shreya Kumaran**
-
-**Dependencies: **Xcode version 14.0.1, Swift version 5, Firebase version 9.0.0**
-
-**Special Instructions: **
+**Special Instructions:**
 
 
 
