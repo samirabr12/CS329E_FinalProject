@@ -12,7 +12,7 @@ Dependencies: **Xcode version 14.0.1, Swift version 5, Firebase version 9.0.0**
 * When adding items to the calculator, make sure to hit enter after adding in the price to have those values included in the sum when pressing calculate 
 * Use this test account for logging in: 
 
-    Email: [user2@test.com](mailto:user2@test.com)
+    Email: [user@test.com](mailto:user@test.com)
 
 
     Password: 123456
