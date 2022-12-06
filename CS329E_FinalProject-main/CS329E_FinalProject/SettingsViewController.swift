@@ -8,7 +8,7 @@
 import UIKit
 
 var soundSetting:Bool = true
-var notifSetting:Bool = false
+var notifSetting:Bool = true
 var darkModeSetting:Bool = false
 
 class SettingsViewController: UIViewController {
@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var darkModeSwitch: UISwitch!
     
     var soundSwitchState: Bool = true
-    var notifSwitchState: Bool = false
+    var notifSwitchState: Bool = true
     var darkModeSwitchState: Bool = false
     
     override func viewDidLoad() {
