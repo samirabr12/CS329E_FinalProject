@@ -25,8 +25,8 @@ Dependencies: **Xcode version 14.0.1, Swift version 5, Firebase version 9.0.0**
 1. Login/register path with Firebase 
 2. Settings Screen. The three behaviors we implemented are Sound Alerts, Notifications, Dark Mode  
 3. Non-default fonts and colors used 
-4. For Grocery List (TableView) - swiping from left to right allows you to edit an item and swiping from right to left allows you to delete an item
-5. Calculator - Can edit calculation by changing text inputs, can delete calculation by swiping right to left, and can confirm reset of calculation with reset button
+4. For Grocery List (TableView) - swiping from left to right allows you to edit an item (quantity) and swiping from right to left allows you to delete an item 
+5. Calculator - Can edit calculation by changing text inputs (item name and price), can delete calculation by swiping right to left, and can confirm reset of calculation with reset button
 
 Two Major elements used: 
 
