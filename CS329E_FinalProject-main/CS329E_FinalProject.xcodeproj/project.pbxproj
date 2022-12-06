@@ -32,6 +32,7 @@
 		7699C870293750BC0054A6B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7699C86F293750BC0054A6B1 /* LoginViewController.swift */; };
 		76AA6D542924704500DFD82F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA6D532924704500DFD82F /* ProfileViewController.swift */; };
 		76AA6D562924717600DFD82F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA6D552924717600DFD82F /* SettingsViewController.swift */; };
+		76CEECFB293EF1B800564FE5 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CEECFA293EF1B700564FE5 /* EditItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		7699C86F293750BC0054A6B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		76AA6D532924704500DFD82F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76AA6D552924717600DFD82F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		76CEECFA293EF1B700564FE5 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditItemViewController.swift; path = ../../../../Downloads/EditItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				7699C864293705C30054A6B1 /* GroceryItem.swift */,
 				672F20222936ECA300034CB3 /* ItemTableViewCell.swift */,
 				40749E6A29360E8C00CDA5C0 /* DatabaseViewController.swift */,
+				76CEECFA293EF1B700564FE5 /* EditItemViewController.swift */,
 				213592C4292C63EC008DE145 /* NewItemViewController.swift */,
 				76AA6D552924717600DFD82F /* SettingsViewController.swift */,
 				76AA6D532924704500DFD82F /* ProfileViewController.swift */,
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				672F20232936ECA300034CB3 /* ItemTableViewCell.swift in Sources */,
+				76CEECFB293EF1B800564FE5 /* EditItemViewController.swift in Sources */,
 				672F20212936EB3A00034CB3 /* HomeViewController.swift in Sources */,
 				678E57742909C5580088A917 /* AppDelegate.swift in Sources */,
 				67E14FE4293EC8A5008F39DF /* StartPageViewController.swift in Sources */,

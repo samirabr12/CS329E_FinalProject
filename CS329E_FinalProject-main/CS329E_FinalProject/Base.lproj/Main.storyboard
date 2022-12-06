@@ -179,6 +179,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="itemLabelName" destination="lDH-qF-TeN" id="uc1-0O-R3b"/>
+                                            <segue destination="yHw-v2-amb" kind="show" identifier="editSegue" id="YE4-gj-HmO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -221,6 +222,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JM2-LR-EYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4640.579710144928" y="750"/>
+        </scene>
+        <!--Edit Item VC-->
+        <scene sceneID="3zs-dT-Otw">
+            <objects>
+                <viewController title="Edit Item VC" id="yHw-v2-amb" customClass="EditItemViewController" customModule="CS329E_FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oTo-KZ-Q9b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Update Item Quantity: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYr-HD-RiM">
+                                <rect key="frame" x="62" y="195" width="291" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="26"/>
+                                <color key="textColor" red="0.1162649065" green="0.45304252360000002" blue="0.20045931080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgS-WC-Mhg">
+                                <rect key="frame" x="62" y="333" width="291" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.71103323640000005" green="1" blue="0.81190803980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPf-KV-yhk">
+                                <rect key="frame" x="141" y="489" width="133" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Save Changes"/>
+                                <connections>
+                                    <action selector="saveChangesButton:" destination="yHw-v2-amb" eventType="touchUpInside" id="dWI-ww-xRo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7l4-Mm-9cu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="P0c-rs-heq"/>
+                    <connections>
+                        <outlet property="userInputQuant" destination="zgS-WC-Mhg" id="l0y-CV-50I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4n-sq-ipd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5557.971014492754" y="386.38392857142856"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="ovH-Ip-1NP">

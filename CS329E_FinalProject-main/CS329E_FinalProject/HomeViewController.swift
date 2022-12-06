@@ -23,6 +23,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var listTableView: UITableView!
     let textCellIdentifier = "listCell"
+    var chosenIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(false)
+        listTableView.reloadData()
         setColor()
     }
     
@@ -86,6 +88,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }        }
         }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenIndex = indexPath.row
+        //performSegue(withIdentifier: "editSegue", sender: chosenIndex)
+    }
+    
+    /*func collectionView(_collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        chosenIndex = indexPath.row
+        performSegue(withIdentifier: "editSegue", sender: chosenIndex)
+    }*/
+    
     @IBAction func logout(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -114,6 +126,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let nextVC = segue.destination as? NewItemViewController{
             nextVC.previousVC = self
             nextVC.delegate1 = self
+        }
+        if segue.identifier == "editSegue",
+           let nextVC = segue.destination as?
+            EditItemViewController {
+            nextVC.delegate2 = self
+            nextVC.currentIndex = chosenIndex
         }
    }
     
